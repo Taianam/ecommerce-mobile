@@ -25,7 +25,7 @@ export function Home() {
     }
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#3a5ca5', padding: 10 }}>
+        <View style={style.fundo}>
             <Image source={Mario} style={style.img} />
             <TouchableOpacity onPress={sairLogin}>
                 <Text>SAIR</Text>

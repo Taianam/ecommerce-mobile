@@ -16,7 +16,7 @@ export const style = StyleSheet.create({
         paddingLeft: 90,
         marginTop: 20,
         marginBottom:10,
-        backgroundColor: "#708cc7",
+        backgroundColor: "#aed9d2",
         borderRadius: 7,
 
 

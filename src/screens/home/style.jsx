@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native'
 
 export const style = StyleSheet.create({
+    fundo: {
+        flex: 1,
+        backgroundColor: "#ecaba7",
+        padding: 10,
+      },    
 
     titulo: {
         color: "#ffff",
