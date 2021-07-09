@@ -1,6 +1,7 @@
 import React,{ createContext, useState, useContext, useEffect} from  "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from "../service/api";
-import AsyncStorage from '@react-native-async-storage/async-storage'
+
 const AuthContext = createContext({});
 
  function ProvedorDeAutentificacao({children}){
@@ -11,6 +12,7 @@ const AuthContext = createContext({});
       recuperarUsuario();
     },[])
 
+    // Função para recuperar o usuário do localStorage
     async function recuperarUsuario() {
       const usuario = await AsyncStorage.getItem("E-COMMECER_user");
     
@@ -19,41 +21,42 @@ const AuthContext = createContext({});
       }
     }
     
-    const fazerLogin = async ({email, senha})=>{
-       let dadosDoUser = {
+    // Função que vai realizar o login
+    const efetuarLogin = async ({email, senha})=>{
+      
+       const dadosUsuario = {
           'email':email,
           'senha':senha,
        }
        
-        const { data } = await api.post('login', dadosDoUser);
-
-        await AsyncStorage.setItem("E-COMMECER_token", JSON.stringify(data.token));
-        await AsyncStorage.setItem("E-COMMECER_user", JSON.stringify(data.cliente));
-
-        setUser(data.cliente)
+      const { data } = await api.post('login', dadosUsuario);
+      await AsyncStorage.setItem("E-COMMECER_token", JSON.stringify(data.token));
+      await AsyncStorage.setItem("E-COMMECER_user", JSON.stringify(data.cliente));
+      setUser(data.cliente)
     }
 
-    const sairLogin = async () => {
+    // Função para sair do aplicação
+    const efetuarLogoff = async () => {
       setUser(undefined);
       await AsyncStorage.removeItem("E-COMMECER_token");
       await AsyncStorage.removeItem("E-COMMECER_user");
     } 
+
     return(
-      <AuthContext.Provider value={{user, fazerLogin, sairLogin}}>
+      <AuthContext.Provider value={{user, efetuarLogin, efetuarLogoff}}>
          {children}
       </AuthContext.Provider>
-
     )
  }
 
- function useAuth() {
+ function usarProvedorDeAutentificacao() {
    const context = useContext(AuthContext);
  
    if (!context) {
-     throw new Error('useAuth must be used within an AuthProvider');
+     throw new Error('Erro ao usar o ProvedorDeAutentifição');
    }
  
    return context;
  }
 
- export {ProvedorDeAutentificacao, useAuth}
+ export {ProvedorDeAutentificacao, usarProvedorDeAutentificacao}

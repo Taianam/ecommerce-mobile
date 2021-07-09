@@ -1,9 +1,13 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import { style } from "../cards/style";
-import { usarControleCarrinho } from "../../hooks/controleCarrinho";
+import { style } from "./style";
+import { usarControleCarrinho } from "../../../hooks/controleCarrinho";
+import { View, 
+         Text, 
+         Image, 
+         TouchableOpacity } from "react-native";
 
 export function Cards(props) {
+
     const { adicionarProdutoPorId } = usarControleCarrinho();
     const { id, nome, descricao, preco, estoque, imagem } = props.produto;
 

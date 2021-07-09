@@ -2,15 +2,15 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AppRouter } from './app.router';
 import { AuthRouter } from './auth.router';
-import { useAuth } from '../hooks/autenticar';
+import { usarProvedorDeAutentificacao } from '../hooks/autenticar';
 
 const Main = createStackNavigator();
 
 export function MainRouter(){
 
-    const { user } = useAuth()
+    const { user } = usarProvedorDeAutentificacao()
 
-    const autentificao = !user; 
+    const autentificao = !!user; 
 
     return(
         <Main.Navigator screenOptions={{

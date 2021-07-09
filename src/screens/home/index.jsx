@@ -1,20 +1,26 @@
-import React from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native'
-import { Cards } from '../../components/cards/index'
-import { style } from './style'
-import api from '../../service/api'
-import Mario from '../../assets/Mario.png'
-import { useAuth } from '../../hooks/autenticar'
+import React, { useEffect, useState } from 'react';
+import api from '../../service/api';
+import Mario from '../../assets/Mario.png';
+import { Cards } from '../../components/cards/cardsHome';
+import { usarProvedorDeAutentificacao } from '../../hooks/autenticar';
+import { style } from './style';
+import { View, 
+         Text, 
+         Image, 
+         TouchableOpacity, 
+         ScrollView, 
+         TextInput } from 'react-native';
 
 export function Home() {
-    const [produtos, setProdutos] = React.useState([]);
+    const [produtos, setProdutos] = useState([]);
 
-    const { sairLogin } = useAuth();
+    const { efetuarLogoff } = usarProvedorDeAutentificacao();
 
-    React.useEffect(() => {
+    useEffect(() => {
         obterProduto();
     }, [])
 
+    //Função para chamar os produtos na api
     const obterProduto = async () => {
         try {
             const { data } = await api.get('produtos')
@@ -25,9 +31,9 @@ export function Home() {
     }
 
     return (
-        <View style={style.fundo}>
+        <View style={{ flex: 1, backgroundColor: '#3a5ca5', padding: 10 }}>
             <Image source={Mario} style={style.img} />
-            <TouchableOpacity onPress={sairLogin}>
+            <TouchableOpacity onPress={efetuarLogoff}>
                 <Text>SAIR</Text>
             </TouchableOpacity>
             <ScrollView>

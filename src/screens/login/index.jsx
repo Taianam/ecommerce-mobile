@@ -1,29 +1,30 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-  ActivityIndicator,
-} from "react-native";
 import { style } from "./style";
-import { useAuth } from "../../hooks/autenticar";
+import { usarProvedorDeAutentificacao } from "../../hooks/autenticar";
+import {View,
+        Text,
+        TouchableOpacity,
+        TextInput,
+        Alert,
+        ActivityIndicator} from "react-native";
 
 export function Login() {
+
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
   const [loading, setLoading] = useState(false);
 
-  const { fazerLogin } = useAuth();
+  const { efetuarLogin } = usarProvedorDeAutentificacao();
 
-  const limparCampos=()=>{
+  // Função para limpar os campos após a submissão
+  const limparCampos= ()=> {
     setEmail("");
     setSenha("");
   }
-  const checarTexto = () => {
+
+  // Função para validar os inputs
+  const checarInputs = () => {
+
     if (email === undefined || email === '') {
       Alert.alert("Email Obrigatorio", "O campo email está vazio");
       return true;
@@ -35,27 +36,21 @@ export function Login() {
     }
   };
 
-  const singIn = async () => {
+  // Função que vai chamar a função de login no Autenficar.jsx
+  const chamarEfetuarLogin = async () => {
     try {
       setLoading(true);
-
-      if(checarTexto()){
+      
+      if(checarInputs()){
         return
       }
+      await efetuarLogin({email, senha});
 
-      let dadosParaLogin = {
-        email: email,
-        senha: senha,
-      };
-      await fazerLogin(dadosParaLogin);
     } catch (error) {
       Alert.alert("Email ou senha invalido!", "Usuario não cadastrado!");
     }finally{
-
       limparCampos();
       setLoading(false)
-      
-
     }
   };
 
@@ -74,7 +69,7 @@ export function Login() {
         placeholder="Senha"
         secureTextEntry={true}
       />
-      <TouchableOpacity onPress={singIn} style={style.botao}>
+      <TouchableOpacity onPress={chamarEfetuarLogin} style={style.botao}>
         {!loading ? (
           <Text> Entrar</Text>
         ) : (

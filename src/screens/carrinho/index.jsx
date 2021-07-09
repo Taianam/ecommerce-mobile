@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { usarControleCarrinho } from "../../hooks/controleCarrinho";
+import { Cards } from "../../components/cards/cardsHome";
 import api from "../../service/api";
 import { View } from "react-native";
-import { usarControleCarrinho } from "../../hooks/controleCarrinho";
-import { Cards } from "../../components/cards";
 
 export function Carrinho() {
     const [produtos, setProdutos] = useState([]);
@@ -37,7 +37,6 @@ export function Carrinho() {
             });
 
             setProdutos(produtoFiltrado);
-            console.log(produtoFiltrado);
         } catch (error) {
             console.log(error);
         }

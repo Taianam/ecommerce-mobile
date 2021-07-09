@@ -1,10 +1,10 @@
 import React from "react";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { Home } from "../screens/home";
-import { Carrinho } from '../screens/carrinho';
 import { FontAwesome5 } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { ControleCarrinho } from "../hooks/controleCarrinho";
+import { Home } from "../screens/home";
+import { Carrinho } from '../screens/carrinho';
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 const App = createMaterialBottomTabNavigator();
 
