@@ -4,36 +4,29 @@ import { Cards } from '../../components/cards/index'
 import { style } from './style'
 import api from '../../service/api'
 import Mario from '../../assets/Mario.png'
-import { useAuth } from '../../hooks/auth'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useAuth } from '../../hooks/autenticar'
 
 export function Home() {
     const [produtos, setProdutos] = React.useState([]);
 
-    const { sairLogin, user } = useAuth();
+    const { sairLogin } = useAuth();
 
     React.useEffect(() => {
         obterProduto();
     }, [])
 
     const obterProduto = async () => {
-
         try {
             const { data } = await api.get('produtos')
-
             setProdutos(data);
         } catch (error) {
             console.log(error)
         }
     }
 
-
     return (
-
         <View style={{ flex: 1, backgroundColor: '#3a5ca5', padding: 10 }}>
-
             <Image source={Mario} style={style.img} />
-            <Text> Bem vindo {user.nome}</Text>
             <TouchableOpacity onPress={sairLogin}>
                 <Text>SAIR</Text>
             </TouchableOpacity>
@@ -46,10 +39,6 @@ export function Home() {
                     </View>)
                 }
             </ScrollView>
-
         </View>
-
     )
-
-
 }

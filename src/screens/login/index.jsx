@@ -10,7 +10,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { style } from "./style";
-import { useAuth } from "../../hooks/auth";
+import { useAuth } from "../../hooks/autenticar";
 
 export function Login() {
   const [email, setEmail] = useState();
