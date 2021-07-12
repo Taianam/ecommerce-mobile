@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { usarControleCarrinho } from "../../hooks/controleCarrinho";
-import { Cards } from "../../components/cards/cardsHome";
+import { Cards } from "../../components/cards/cardsCarrinho";
 import api from "../../service/api";
 import { View } from "react-native";
 
 export function Carrinho() {
     const [produtos, setProdutos] = useState([]);
 
-    const { produtosIds } = usarControleCarrinho();
+    const { produtosIds, removerProdutoPorId } = usarControleCarrinho();
 
     useEffect(() => {
         obterProduto();
     }, [produtosIds]);
 
     const obterProduto = async () => {
+        console.log(produtosIds)
         try {
-            if (produtosIds.length == 0 || produtosIds === undefined) {
+            if (produtosIds.length == 0 || produtosIds === undefined) { 
+                setProdutos([]);
                 return;
             }
 
@@ -42,11 +44,19 @@ export function Carrinho() {
         }
     };
 
+    // Função que vai remover o produto E atualizar a tela
+    const removerProduto = async (id)=>{
+        await removerProdutoPorId(id);
+        setTimeout(() => {
+            obterProduto();
+        }, 1000);
+    }
+
     return (
         <View>
             {produtos.map((p) => (
                 <View key={p.id}>
-                    <Cards produto={p} />
+                    <Cards produto={p} removerProduto={removerProduto} />
                 </View>
             ))}
         </View>
