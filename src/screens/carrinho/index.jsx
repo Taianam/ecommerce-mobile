@@ -10,13 +10,13 @@ export function Carrinho() {
     const { produtosIds, removerProdutoPorId } = usarControleCarrinho();
 
     useEffect(() => {
-        obterProduto();
+        obterProduto(produtosIds);
     }, [produtosIds]);
 
-    const obterProduto = async () => {
-        console.log(produtosIds)
+    const obterProduto = async (ids) => {
+        console.log(ids)
         try {
-            if (produtosIds.length == 0 || produtosIds === undefined) { 
+            if (ids.length == 0 || ids === undefined) { 
                 setProdutos([]);
                 return;
             }
@@ -25,8 +25,8 @@ export function Carrinho() {
             const { data } = await api.get("produtos");
 
             // Remove todo id repetido dentro do array
-            const novoArrayDeIds = produtosIds.filter((index, id) => {
-                return produtosIds.indexOf(index) === id;
+            const novoArrayDeIds = ids.filter((index, id) => {
+                return ids.indexOf(index) === id;
             });
 
             //Filtra os produtos pelo id
@@ -46,10 +46,7 @@ export function Carrinho() {
 
     // Função que vai remover o produto E atualizar a tela
     const removerProduto = async (id)=>{
-        await removerProdutoPorId(id);
-        setTimeout(() => {
-            obterProduto();
-        }, 1000);
+        obterProduto( await removerProdutoPorId(id));
     }
 
     return (

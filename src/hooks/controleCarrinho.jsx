@@ -12,15 +12,9 @@ function ControleCarrinho({ children }) {
 
   // Função que remove um unico id do estado
   async function removerProdutoPorId(id) {
-    const idFiltrado = produtosIds.indexOf(id);
-
-    if(idFiltrado == 0 ){
-        setProdutosIds(()=> []);
-        console.log('wwewe')
-    } else if(idFiltrado !== -1){
-        produtosIds.splice(idFiltrado, 1);
-        setProdutosIds(produtosIds);
-    }
+    produtosIds.splice(produtosIds.indexOf(id), 1);
+    setProdutosIds(()=> produtosIds);
+    return produtosIds;
   }
 
   return (
