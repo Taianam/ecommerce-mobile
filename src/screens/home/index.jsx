@@ -14,8 +14,7 @@ import { View,
 export function Home() {
     const [produtos, setProdutos] = useState([]);
 
-    const { efetuarLogoff } = usarProvedorDeAutentificacao();
-
+ 
     useEffect(() => {
         obterProduto();
     }, [])
@@ -33,9 +32,6 @@ export function Home() {
     return (
         <View style={style.fundo}>
             <Image source={Mario} style={style.img} />
-            <TouchableOpacity onPress={efetuarLogoff}>
-                <Text>SAIR</Text>
-            </TouchableOpacity>
             <ScrollView>
             <Text style={style.titulo}>BEM VINDO!</Text>
             <TextInput style={style.input}></TextInput>
