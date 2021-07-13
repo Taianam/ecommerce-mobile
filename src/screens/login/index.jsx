@@ -10,7 +10,7 @@ import {View,
         ActivityIndicator,
         ImageBackground} from "react-native";
 
-const image = { uri: 'https://i.ibb.co/dpZhm8Q/1.jpg'}
+const image = { uri: 'https://i.ibb.co/dtZztXq/1-1.jpg'}
 export function Login() {
 
   const [email, setEmail] = useState();
