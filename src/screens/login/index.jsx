@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { style } from "./style";
 import { usarProvedorDeAutentificacao } from "../../hooks/autenticar";
+import { FontAwesome5 } from '@expo/vector-icons';
 import {View,
         Text,
         TouchableOpacity,
         TextInput,
         Alert,
-        ActivityIndicator} from "react-native";
+        ActivityIndicator,
+        ImageBackground} from "react-native";
 
+const image = { uri: 'https://i.ibb.co/dpZhm8Q/1.jpg'}
 export function Login() {
 
   const [email, setEmail] = useState();
@@ -55,7 +58,8 @@ export function Login() {
   };
 
   return (
-    <View>
+    <View style={style.container}>
+      <ImageBackground source={image} style={style.image}>
       <TextInput
         value={email}
         onChangeText={setEmail}
@@ -65,17 +69,28 @@ export function Login() {
       <TextInput
         onChangeText={setSenha}
         value={senha}
-        style={style.input}
+        style={style.inputDois}
         placeholder="Senha"
         secureTextEntry={true}
       />
-      <TouchableOpacity onPress={chamarEfetuarLogin} style={style.botao}>
+      <View style={{ flexDirection: "row" }}>
+      <TouchableOpacity onPress={chamarEfetuarLogin}>
         {!loading ? (
-          <Text> Entrar</Text>
+          <Text style={style.botao}> Entrar</Text>
         ) : (
           <ActivityIndicator size="small" color="#e5ff00" />
         )}
       </TouchableOpacity>
+      <TouchableOpacity>
+        <Text style={style.botaoDois}>Cadastre-se
+        <FontAwesome5 name="candy-cane" size={24} color="brown"/>
+        </Text>
+      </TouchableOpacity>
+      </View>
+      <TouchableOpacity>
+        <Text style={style.forget}>Esqueceu sua senha? Clica aqui </Text>
+      </TouchableOpacity>
+      </ImageBackground>
     </View>
   );
 }
