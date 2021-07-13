@@ -18,7 +18,7 @@ import { Sair } from "../screens/sair";
 
 const App = createMaterialBottomTabNavigator();
 
-export function AppRouter() {
+export function ClientRouter() {
 
   function getLengthProdutos() {
     const { produtosIds } = usarControleCarrinho();
