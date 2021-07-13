@@ -15,7 +15,6 @@ export function Cards(props) {
       </View>
       <View style={style.conteinerDois}>
         <Text>{nome}</Text>
-        <Text>Descrição:{descricao}</Text>
         <Text>Valor: {preco} </Text>
         <TouchableOpacity
           onPress={() => props.removerProduto(id)}

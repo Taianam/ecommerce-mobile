@@ -10,7 +10,7 @@ export function MainRouter(){
 
     const { user } = usarProvedorDeAutentificacao()
 
-    const autentificao = !!user; 
+    const autentificao = !user; 
 
     return(
         <Main.Navigator screenOptions={{
