@@ -12,6 +12,7 @@ function ControleCarrinho({ children }) {
 
   // Função que remove um unico id do estado
   async function removerProdutoPorId(id) {
+    
     produtosIds.splice(produtosIds.indexOf(id), 1);
     setProdutosIds(()=> produtosIds);
     return produtosIds;

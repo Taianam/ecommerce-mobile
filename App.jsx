@@ -4,9 +4,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { MainRouter } from "./src/router/main.router";
 import { ProvedorDeAutentificacao } from "./src/hooks/autenticar";
-import './src/service/firebase'
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(['Setting a timer']);
+import "./src/service/firebase";
+import { LogBox } from "react-native";
+LogBox.ignoreLogs(["Setting a timer"]);
 
 export default function App() {
   return (
