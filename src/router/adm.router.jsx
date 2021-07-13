@@ -13,7 +13,7 @@ export function AdmRouter() {
   return (
     <Adm.Navigator initialRouteName="Home">
       <Adm.Screen name="Home" component={Home} />
-      <Adm.Screen name="Atualizar" component={Atualizar} />
+      {/* <Adm.Screen name="Atualizar" component={Atualizar} /> */}
       <Adm.Screen name="Cadastrar" component={Cadastrar} />
     </Adm.Navigator>
   );
