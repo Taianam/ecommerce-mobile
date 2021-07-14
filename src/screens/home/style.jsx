@@ -14,6 +14,7 @@ export const style = StyleSheet.create({
     img: {
         width: "100%",
         height: "40%",
+        
     },
     input: {
         backgroundColor: "white",
