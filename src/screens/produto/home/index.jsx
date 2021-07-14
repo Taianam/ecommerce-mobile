@@ -7,7 +7,10 @@ import {
   ScrollView,
   TextInput,
 } from "react-native";
+import { ModalCustom } from "../../../components/modal";
 import api  from "../../../service/api";
+import { Ionicons } from "@expo/vector-icons";
+import { Atualizar } from "../atualizar";
 
 export function Home() {
   const [produtos, setProdutos] = useState([]);
@@ -31,6 +34,11 @@ export function Home() {
       {produtos.map((p) => (
         <View key={p.id}>
           <Text>{p.nome}</Text>
+          <ModalCustom 
+            fechar={'batata'}
+            icone={<Ionicons name="md-paper-plane" size={35} color="#0ca6ee" />}> 
+            <Atualizar produto={p}/>
+          </ModalCustom>
         </View>
       ))}
     </View>

@@ -91,7 +91,7 @@ export function Cadastrar() {
         onValueChange={(itemValue) => setCategoriaId(itemValue)}
       >
         {categoria.map((c) => (
-          <Picker.Item label={c.nome} value={c.id} />
+          <Picker.Item  key ={c.id} label={c.nome} value={c.id} />
         ))}
       </Picker>
       <Data inserirDataCadastro={inserirDataCadastro} />

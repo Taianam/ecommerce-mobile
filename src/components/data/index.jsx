@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { View, Button, Platform, TextInput,  } from "react-native";
+import { View, Button, Platform, TextInput, Keyboard  } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 
 export const Data = ({ inserirDataCadastro }) => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState("date");
+  const [dataString, setDataString] = useState("")
   const [show, setShow] = useState(false);
 
   // Função que vai tratar a data de dataCadastro
@@ -18,13 +19,17 @@ export const Data = ({ inserirDataCadastro }) => {
 
     
     const dataFormatada = formatarData(currentDate);
-    setDate(dataFormatada)
+    setDate(currentDate)
+    setDataString(dataFormatada)
     inserirDataCadastro(dataFormatada);
+    Keyboard.dismiss()
   };
 
   const showMode = (currentMode) => {
+    Keyboard.dismiss()
     setShow(true);
     setMode(currentMode);
+    
   };
 
   const showDatepicker = () => {
@@ -38,7 +43,7 @@ export const Data = ({ inserirDataCadastro }) => {
   return (
     <View>
       <View>
-       <Button onPress={onChange} title="data de cadastra"/>
+        <TextInput onTouchStart={showMode} value={dataString} style={{backgroundColor: 'red'}}/>
       </View>
       {show && (
         <DateTimePicker
