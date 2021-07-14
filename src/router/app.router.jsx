@@ -14,7 +14,7 @@ export function AppRouter() {
       <App.Navigator screenOptions={{
         headerShown: false
       }} >
-        <App.Screen name="App" component={false? AdmRouter: ClientRouter } />
+        <App.Screen name="App" component={true? AdmRouter: ClientRouter } />
       </App.Navigator>
   );
 }

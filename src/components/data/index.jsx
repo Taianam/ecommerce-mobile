@@ -1,17 +1,25 @@
-import React, {useState} from 'react';
-import {View, Button, Platform} from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import React, { useState } from "react";
+import { View, Button, Platform, TextInput,  } from "react-native";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
-export const Data = ({inserirDataCadastro}) => {
-  const [date, setDate] = useState(new Date);
-  const [mode, setMode] = useState('date');
+export const Data = ({ inserirDataCadastro }) => {
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState("date");
   const [show, setShow] = useState(false);
+
+  // Função que vai tratar a data de dataCadastro
+  function formatarData(data) {
+    return String(data.toISOString().slice(0, 10));
+  }
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
-    setShow(Platform.OS === 'ios');
-    setDate(currentDate);
-    inserirDataCadastro(currentDate);
+    setShow(Platform.OS === "ios");
+
+    
+    const dataFormatada = formatarData(currentDate);
+    setDate(dataFormatada)
+    inserirDataCadastro(dataFormatada);
   };
 
   const showMode = (currentMode) => {
@@ -20,17 +28,17 @@ export const Data = ({inserirDataCadastro}) => {
   };
 
   const showDatepicker = () => {
-    showMode('date');
+    showMode("date");
   };
 
   const showTimepicker = () => {
-    showMode('time');
+    showMode("time");
   };
 
   return (
     <View>
       <View>
-        <Button onPress={showDatepicker} title="Show date picker!" />
+       <Button onPress={onChange} title="data de cadastra"/>
       </View>
       {show && (
         <DateTimePicker

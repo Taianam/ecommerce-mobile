@@ -4,6 +4,7 @@ import { View, TextInput, TouchableOpacity, Text } from "react-native";
 import { Data } from "../../../components/data";
 import { Picker } from "@react-native-picker/picker";
 
+
 export function Cadastrar() {
   const [nome, setNome] = useState();
   const [descricao, setDescricao] = useState();
@@ -12,25 +13,17 @@ export function Cadastrar() {
   const [preco, setPreco] = useState();
   const [dataCadastro, setDataCadastro] = useState();
   const [categoria, setCategoria] = useState([]);
-  const [categoriaId, setCategoriaId] = useState([])
-
+  const [categoriaId, setCategoriaId] = useState([]);
 
   const [selectedLanguage, setSelectedLanguage] = useState();
 
   // Função que recebe uma data do compenente DATA e inseri no estado.
   function inserirDataCadastro(data) {
-    const dataFormatada = formatarData(data);
-    setDataCadastro(dataFormatada);
-  }
-
-  // Função que vai tratar a data de dataCadastro
-  function formatarData(data) {
-    return String(data.toISOString().slice(0, 10));
+    setDataCadastro(data);
   }
 
   // Função que vai cadastrar os produtos
   const cadastrarProduto = async () => {
-    
     try {
       const novoProduto = {
         nome: nome,
@@ -40,11 +33,11 @@ export function Cadastrar() {
         dataDeCadastro: dataCadastro,
         preco: preco,
       };
-   
-       await api.post(`produtos/${categoriaId}`, novoProduto);
-     } catch (error) {
-       console.log(error);
-     }
+
+      await api.post(`produtos/${categoriaId}`, novoProduto);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -60,7 +53,6 @@ export function Cadastrar() {
       console.log(error);
     }
   };
-
 
   return (
     <View>
@@ -94,17 +86,14 @@ export function Cadastrar() {
         onChangeText={setPreco}
         placeholder="Preço"
       />
-
       <Picker
         selectedValue={categoriaId}
         onValueChange={(itemValue) => setCategoriaId(itemValue)}
-        
       >
         {categoria.map((c) => (
           <Picker.Item label={c.nome} value={c.id} />
         ))}
       </Picker>
-
       <Data inserirDataCadastro={inserirDataCadastro} />
       <TouchableOpacity onPress={cadastrarProduto}>
         <Text>Cadastrar</Text>
