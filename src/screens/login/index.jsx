@@ -13,7 +13,8 @@ import {View,
 
 const image2 = { uri: 'https://i.ibb.co/djpbGVC/logo1.png'}
 const fundo = { uri: 'https://i.ibb.co/3Mym9y9/1-2.jpg'}
-export function Login() {
+
+export function Login({navigation}) {
 
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
@@ -88,7 +89,7 @@ export function Login() {
           <ActivityIndicator size="small" color="#e5ff00" />
         )}
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => {navigation.navigate('Cadastrar')}}>
         <Text style={style.botaoDois}>Cadastre-se
         <FontAwesome5 name="candy-cane" size={24} color="brown"/>
         </Text>

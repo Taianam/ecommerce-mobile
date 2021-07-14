@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Login } from "../screens/login";
+import Cadastrar from "../screens/cadastro";
 
 const Auth = createStackNavigator();
 
@@ -12,6 +13,7 @@ export function AuthRouter() {
       }}
     >
       <Auth.Screen name="Login" component={Login} />
+      <Auth.Screen name="Cadastrar" component={Cadastrar} />
     </Auth.Navigator>
   );
 }
