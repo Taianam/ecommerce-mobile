@@ -8,9 +8,11 @@ import {View,
         TextInput,
         Alert,
         ActivityIndicator,
+        Image,
         ImageBackground} from "react-native";
 
-const image = { uri: 'https://i.ibb.co/dtZztXq/1-1.jpg'}
+const image2 = { uri: 'https://i.ibb.co/djpbGVC/logo1.png'}
+const fundo = { uri: 'https://i.ibb.co/3Mym9y9/1-2.jpg'}
 export function Login() {
 
   const [email, setEmail] = useState();
@@ -59,7 +61,7 @@ export function Login() {
 
   return (
     <View style={style.container}>
-      <ImageBackground source={image} style={style.image}>
+      <ImageBackground source={fundo} style={style.fundo}>
       <TextInput
         value={email}
         onChangeText={setEmail}
@@ -73,6 +75,11 @@ export function Login() {
         placeholder="Senha"
         secureTextEntry={true}
       />
+      <View><TouchableOpacity>
+        <Text style={style.forget}>Esqueceu sua senha? Clica aqui
+         </Text>
+      </TouchableOpacity>
+      </View>
       <View style={{ flexDirection: "row" }}>
       <TouchableOpacity onPress={chamarEfetuarLogin}>
         {!loading ? (
@@ -87,9 +94,11 @@ export function Login() {
         </Text>
       </TouchableOpacity>
       </View>
-      <TouchableOpacity>
-        <Text style={style.forget}>Esqueceu sua senha? Clica aqui </Text>
-      </TouchableOpacity>
+      <View>
+      <Image
+        source={image2} style={style.logo}
+      />
+      </View>
       </ImageBackground>
     </View>
   );

@@ -7,13 +7,14 @@ export const style = StyleSheet.create({
         borderRadius: 8,
         width: 120,
         height: 100,
+        marginBottom: 7
     },
     botao: {
-        width: "62%",
-        paddingLeft: 90,
+        width: "50%",
+        paddingLeft: 65,
         marginTop: 20,
         marginBottom: 10,
-        backgroundColor: "#aed9d2",
+        backgroundColor: "#ecaba7",
         borderRadius: 7,
     },
     conteinerDois: {
@@ -23,8 +24,11 @@ export const style = StyleSheet.create({
     },
     cont: {
         flexDirection: "row",
-        backgroundColor: "#fff",
+        backgroundColor: "#ffffff",
         marginTop: 20,
         borderRadius: 6,
     },
+ font: {
+    fontSize: 18
+ }
 });

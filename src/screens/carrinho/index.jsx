@@ -82,7 +82,7 @@ export function Carrinho() {
 						<View style={style.conteinerVazio}>
 							<Image
 								style={style.imageDois}
-								source={{ uri: "https://i.ibb.co/LPG9sQv/cadastro.png" }}
+								source={require("../../assets/carrinhovazio.png")}
 							/>
 						</View>
 					) : (

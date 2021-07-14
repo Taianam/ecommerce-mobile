@@ -17,13 +17,13 @@ export function Cards(props) {
                 <Image source={{ uri: `${imagem}` }} style={style.imagem} />
             </View>
             <View style={style.conteinerDois}>
-                <Text>{nome}</Text>
-                <Text>Valor: {preco} </Text>
+                <Text style={style.font}>{nome}</Text>
+                <Text>Valor: R$ {preco} </Text>
                 <TouchableOpacity
                     onPress={() => adicionarProdutoPorId(id)}
                     style={style.botao}
                 >
-                    <Text> Comprar</Text>
+                    <Text>Comprar</Text>
                 </TouchableOpacity>
             </View>
         </View>

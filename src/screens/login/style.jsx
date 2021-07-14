@@ -6,9 +6,8 @@ export const style = StyleSheet.create({
         flexDirection: "column",
     },
     input: {
-        backgroundColor: "#ccc",
-        marginTop:80,
-        paddingTop: 10,
+        marginTop:270,
+        paddingTop: 20,
         backgroundColor: "#F08080",
         opacity:0.8,
         margin: 10,
@@ -16,8 +15,8 @@ export const style = StyleSheet.create({
         marginBottom:1,
     },
     inputDois: {
-        marginTop:20,
-        paddingTop: 10,
+        marginTop:30,
+        paddingTop: 20,
         backgroundColor: "#F08080",
         opacity:0.8,
         margin: 10,
@@ -27,16 +26,14 @@ export const style = StyleSheet.create({
         
     },
     botao: {
-        marginTop:35,
+        marginTop:30,
         alignItems: "center",
-        backgroundColor: "#708cc7",
         marginLeft: 90,
-        width: "50%",
         backgroundColor: "#FFC0CB",
         marginLeft: 24,
         width: "90%",
         justifyContent: "center",
-        padding: 7,
+        padding: 5,
         borderRadius: 8,
         padding: 15,
         borderRadius: 50,
@@ -45,13 +42,13 @@ export const style = StyleSheet.create({
         fontSize: 25
     },
     botaoDois: {
-        marginTop:35,
+        marginTop:30,
         alignItems: "center",
         backgroundColor: "white",
         marginLeft: 24,
         width: "90%",
         justifyContent: "center",
-        padding: 15,
+        padding: 10,
         borderRadius: 50,
         borderWidth:5,
         borderColor: "#ecaba7",
@@ -62,12 +59,19 @@ export const style = StyleSheet.create({
         textDecorationLine: "underline",
         color: "#836FFF",
         marginLeft: 90,
-        marginTop: 10,
+        marginTop: 20,
         fontWeight: 'bold',
         fontSize: 18,
         color: 'brown'
     },
-    image: {
+    fundo: {
         flex:1,
-    }
+    },
+    logo: {
+        marginTop:5,
+        width: 150, 
+        height: 150, 
+        borderRadius: 400 / 2, 
+        left: 131,
+    },
 });
