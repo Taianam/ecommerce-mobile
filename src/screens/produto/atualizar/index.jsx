@@ -22,7 +22,7 @@ export function Atualizar({ produto, atualizarHomeProduto }) {
   const [preco, setPreco] = useState(String(produto.preco));
   const [dataCadastro, setDataCadastro] = useState();
   const [categoria, setCategoria] = useState([]);
-  const [categoriaId, setCategoriaId] = useState([]);
+  const [categoriaId, setCategoriaId] = useState(produto.categoria.id);
 
   // Função que recebe uma data do compenente DATA e inseri no estado.
   function inserirDataCadastro(data) {
@@ -32,6 +32,9 @@ export function Atualizar({ produto, atualizarHomeProduto }) {
   // Função que atualiza um produto na API
   const atualizarUmProduto = async () => {
     const novoProduto = {
+      categoria: {
+        id: categoriaId
+      },
       nome: nome,
       descricao: descricao,
       imagem: imagem,
@@ -39,7 +42,7 @@ export function Atualizar({ produto, atualizarHomeProduto }) {
       dataDeCadastro: dataCadastro,
       preco: preco,
     };
-
+    console.log(novoProduto)
     const data = await atualizarProduto(produto.id, novoProduto);
     atualizarHomeProduto();
   };

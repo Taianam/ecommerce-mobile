@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
   fundo: {
     flex: 1,
-    width: '100%'
+    backgroundColor: "#aa4a1e92",
   },
 
   imagem: {

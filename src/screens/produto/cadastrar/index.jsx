@@ -7,7 +7,7 @@ import { style } from "./style";
 import logoCadastrar from "../../../assets/cadastrodeprodutos.png"
 import api from "../../../service/api";
 
-const fundo = {uri: 'https://i.ibb.co/S5WCBtc/2.jpg'}
+
 
 export function Cadastrar() {
   const [nome, setNome] = useState();
@@ -57,8 +57,7 @@ export function Cadastrar() {
   };
 
   return (
-    <View>
-      <ImageBackground source={fundo} >
+    <View style={style.fundo}>
       <Image style={style.imagem} source={logoCadastrar}/>
       <TextInput
         style={style.imput}
@@ -103,7 +102,6 @@ export function Cadastrar() {
       <TouchableOpacity style={style.button} onPress={cadastrarProduto}>
         <Text>Cadastrar</Text>
       </TouchableOpacity>
-      </ImageBackground>
     </View>
   );
 }

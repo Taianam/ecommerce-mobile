@@ -3,11 +3,9 @@ import {
   View,
   Text,
   ScrollView,
-  TouchableOpacity,
-  TextInput,
 } from "react-native";
 import { ModalCustom } from "../../../components/modal";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons,EvilIcons  } from "@expo/vector-icons";
 import { Atualizar } from "../atualizar";
 import { obterProduto, atualizarProduto } from "../../../service/api.produto";
 
@@ -34,7 +32,7 @@ export function Home() {
             <ModalCustom
               fechar={"Cancelar"}
               icone={
-                <Ionicons name="md-paper-plane" size={35} color="#0ca6ee" />
+                <EvilIcons name="pencil" size={24} color="black" />
               }
             >
               <Atualizar produto={p} atualizarHomeProduto={obterTodosOsProduto} />
