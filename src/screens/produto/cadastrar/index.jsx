@@ -1,4 +1,4 @@
-import api from "../../../service/api";
+
 import React, { useEffect, useState, useRef } from "react";
 import { View, TextInput, TouchableOpacity, Text } from "react-native";
 import { Data } from "../../../components/data";

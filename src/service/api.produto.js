@@ -2,7 +2,8 @@ import api  from "../service/api";
 
 const obterProduto = async ()=>{
     try {
-        await api.get("produtos");
+     const {data}=  await api.get("produtos");
+     return data;
     } catch (error) {
         console.log(error);
     }
@@ -11,7 +12,8 @@ const obterProduto = async ()=>{
 
 const cadastrarProduto = async (categoriaId, novoProduto)=>{
 try {
-    await api.post(`produtos/${categoriaId}`, novoProduto)
+    return await api.post(`produtos/${categoriaId}`, novoProduto)
+    
 } catch (error) {
     console.log(error)
 }
@@ -20,7 +22,8 @@ try {
 
 const atualizarProduto =async (id, novoProduto)=>{
     try {
-        await api.post(`produtos/${id}`, novoProduto)
+        const {data}= await api.put(`produtos/${id}`, novoProduto)
+        return data
     } catch (error) {
      console.log(error)   
     }
@@ -29,7 +32,7 @@ const atualizarProduto =async (id, novoProduto)=>{
 
 const deletarProduto =async (id)=>{
     try {
-        await api.post(`produtos/${id}`)
+      return  await api.delete(`produtos/${id}`)
     } catch (error) {
         console.log(error)
     }

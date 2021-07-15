@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { View, Button, Platform, TextInput, Keyboard  } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { style} from "./style"
 
 export const Data = ({ inserirDataCadastro }) => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState("date");
   const [dataString, setDataString] = useState("")
   const [show, setShow] = useState(false);
+  
 
   // Função que vai tratar a data de dataCadastro
   function formatarData(data) {
@@ -43,7 +45,7 @@ export const Data = ({ inserirDataCadastro }) => {
   return (
     <View>
       <View>
-        <TextInput onTouchStart={showMode} value={dataString} style={{backgroundColor: 'red'}}/>
+        <TextInput placeholder="ano/mês/dia" onTouchStart={showMode} value={dataString} style={style.imput}/>
       </View>
       {show && (
         <DateTimePicker

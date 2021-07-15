@@ -10,7 +10,7 @@ import {
 import { ModalCustom } from "../../../components/modal";
 import { Ionicons } from "@expo/vector-icons";
 import { Atualizar } from "../atualizar";
-import { obterProduto } from "../../../service/api.produto";
+import { obterProduto, atualizarProduto } from "../../../service/api.produto";
 
 export function Home() {
   const [produtos, setProdutos] = useState([]);
@@ -21,9 +21,11 @@ export function Home() {
 
   //Função para chamar os produtos na api
   const obterTodosOsProduto = async () => {
-    const { data } = await obterProduto();
+    const  data  = await obterProduto();
     setProdutos(data);
   };
+
+
 
   
   return (
@@ -33,7 +35,7 @@ export function Home() {
         <View key={p.id}>
           <Text>{p.nome}</Text>
           <ModalCustom
-            fechar={"batata"}
+            fechar={"Cancelar"}
             icone={<Ionicons name="md-paper-plane" size={35} color="#0ca6ee" />}
           >
             <Atualizar produto={p} />

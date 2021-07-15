@@ -1,7 +1,8 @@
 import React from "react";
+import {View, Text} from 'react-native'
 import { createStackNavigator } from "@react-navigation/stack";
-import { Login } from "../screens/login";
-import Cadastrar from "../screens/cadastro";
+import {Login} from '../screens/login'
+import Cadastrar from '../screens/cadastro'
 
 const Auth = createStackNavigator();
 

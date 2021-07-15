@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Modal, TouchableOpacity } from "react-native";
+import { style } from "./style";
 
 export function ModalCustom({ children, icone, fechar }) {
     const [modalVisible, setModalVisible] = useState(false);

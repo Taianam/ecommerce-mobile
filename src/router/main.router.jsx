@@ -9,7 +9,7 @@ const Main = createStackNavigator();
 export function MainRouter() {
 	const { user } = usarProvedorDeAutentificacao();
 
-	const autentificao = !!user;
+	const autentificao = !user;
 
 	return (
 		<Main.Navigator
@@ -19,7 +19,7 @@ export function MainRouter() {
 		>
 			<Main.Screen
 				name="Root"
-				component={autentificao ? AppRouter : AuthRouter}
+				component={autentificao? AppRouter : AuthRouter}
 			/>
 		</Main.Navigator>
 	);

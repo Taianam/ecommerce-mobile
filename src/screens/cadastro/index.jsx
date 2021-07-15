@@ -8,7 +8,7 @@ import { Text,
   ImageBackground, 
   Image, 
   Alert } from 'react-native'
-import api from '../../../src/service/api';
+import api from '../../service/api';
 
 const fundo = {uri: 'https://i.ibb.co/S5WCBtc/2.jpg'}
 const cadastroLogo = {uri: 'https://i.ibb.co/LPG9sQv/cadastro.png'}
@@ -22,34 +22,6 @@ export default function Cadastrar({navigation}){
   const [newSenha, setNewSenha] = useState('');
   const [newCep, setNewCep] = useState('');
 
-  const checarCampos = () => {
-
-    if(newNome === ''){
-      Alert.alert("Nome Obrigatório");
-      return true;
-    }
-    
-    if(newCpf === undefined || cpf === ''){
-      Alert.alert("Cpf não existe", "Cpf Obrigatório");
-      return true;
-    }
-
-    if (newEmail === '') {
-      Alert.alert("Email Obrigatório");
-      return true;
-    }
-
-    if (newSenha === '') {
-      Alert.alert("Senha Obrigatória");
-      return true;
-    }
-
-    if( newCep === ''){
-      Alert.alert("Cep Obrigatório");
-      return true;
-    }
-
-  };
 
 
   const handleCadastrar = async () =>{
@@ -64,7 +36,7 @@ export default function Cadastrar({navigation}){
         cep: newCep
       }
     };
-      checarCampos()
+   
       await api.post('clientes', cliente)
       navigation.navigate('Login')
 
