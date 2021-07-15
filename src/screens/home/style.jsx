@@ -4,7 +4,7 @@ export const style = StyleSheet.create({
     fundo: {
         flex: 1,
         backgroundColor: "#ecaba7",
-        padding: 10,
+        paddingBottom: 10
     },
     titulo: {
         color: "#ffff",
@@ -17,6 +17,6 @@ export const style = StyleSheet.create({
         
     },
     input: {
-        backgroundColor: "white",
+        paddingHorizontal: 10,
     }
 });

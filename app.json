@@ -3,6 +3,7 @@
     "name": "E-COMMECER",
     "slug": "E-COMMECER",
     "version": "1.0.0",
+    "userInterfaceStyle": "automatic",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

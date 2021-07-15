@@ -22,7 +22,9 @@ export function Home() {
   //Função para chamar os produtos na api
   const obterProduto = async () => {
     try {
+      console.log('data')
       const { data } = await api.get("produtos");
+      console.log(data)
       setProdutos(data);
     } catch (error) {
       console.log(error);
