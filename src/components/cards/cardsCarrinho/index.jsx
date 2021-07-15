@@ -1,6 +1,6 @@
 import React from "react";
 import { style } from "./style";
-import { usarControleCarrinho } from "../../../hooks/controleCarrinho";
+import { usarControleCarrinho } from "../../../context/controleCarrinho";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 

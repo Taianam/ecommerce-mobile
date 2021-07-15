@@ -11,7 +11,7 @@ import {
 import firebase from "firebase";
 import "firebase/firestore";
 import { Ionicons } from "@expo/vector-icons";
-import { usarProvedorDeAutentificacao } from "../../hooks/autenticar";
+import { usarProvedorDeAutentificacao } from "../../context/autenticar";
 
 export function Chat() {
   const [menssagem, setMensagem] = useState();

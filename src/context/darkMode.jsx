@@ -4,7 +4,7 @@ const AuthContext = createContext({});
 
  function DarkModeContexto({children}){
 
-    const [dark, setDark] = useState(dark);
+    const [dark, setDark] = useState(false);
 
     function alterarDarkMode(){
         setDark(!dark)
@@ -20,9 +20,9 @@ const AuthContext = createContext({});
  function usarDarkModeContexto() {
    const context = useContext(AuthContext);
  
-   if (!context) {
-     throw new Error('Erro ao usar o ProvedorDeAutentifição');
-   }
+    if (!context) {
+      throw new Error('Erro ao usar o ProvedorDeAutentifição');
+    }
  
    return context;
  }

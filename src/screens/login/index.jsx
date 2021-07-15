@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { style } from "./style";
-import { usarProvedorDeAutentificacao } from "../../hooks/autenticar";
+import { usarProvedorDeAutentificacao } from "../../context/autenticar";
 import { FontAwesome5 } from '@expo/vector-icons';
 import {View,
         Text,

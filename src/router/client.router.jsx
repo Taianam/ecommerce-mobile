@@ -1,12 +1,12 @@
 import React from "react";
-import { ControleCarrinho } from "../hooks/controleCarrinho";
+import { ControleCarrinho } from "../context/controleCarrinho";
 import { Home } from "../screens/home";
 import { Carrinho } from "../screens/carrinho";
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem} from "@react-navigation/drawer";
 import { Chat } from "../screens/chat";
 import { Sair } from "../screens/sair";
-import { Notificacao } from "../hooks/notificacao";
-import { usarDarkModeContexto } from "../hooks/darkMode";
+import { Notificacao } from "../context/notificacao";
+import { usarDarkModeContexto } from "../context/darkMode";
 
 const App = createDrawerNavigator();
 

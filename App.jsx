@@ -3,10 +3,10 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { MainRouter } from "./src/router/main.router";
-import { ProvedorDeAutentificacao } from "./src/hooks/autenticar";
+import { ProvedorDeAutentificacao } from "./src/context/autenticar";
 import "./src/service/firebase";
 import { LogBox } from "react-native";
-import { DarkModeContexto } from "./src/hooks/darkMode";
+import { DarkModeContexto } from "./src/context/darkMode";
 LogBox.ignoreLogs(["Setting a timer"]);
 
 export default function App() {

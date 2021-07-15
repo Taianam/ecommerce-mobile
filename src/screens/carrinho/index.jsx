@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { usarControleCarrinho } from "../../hooks/controleCarrinho";
+import { usarControleCarrinho } from "../../context/controleCarrinho";
 import { Cards } from "../../components/cards/cardsCarrinho";
 import api from "../../service/api";
 import {

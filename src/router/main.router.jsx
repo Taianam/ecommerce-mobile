@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { AppRouter } from "./app.router";
 import { AuthRouter } from "./auth.router";
-import { usarProvedorDeAutentificacao } from "../hooks/autenticar";
+import { usarProvedorDeAutentificacao } from '../context/autenticar';
 
 const Main = createStackNavigator();
 
