@@ -76,7 +76,7 @@ export function Login({navigation}) {
         placeholder="Senha"
         secureTextEntry={true}
       />
-      <View><TouchableOpacity>
+      <View><TouchableOpacity onPress={() => {navigation.navigate('RecuperarSenha')}}>
         <Text style={style.forget}>Esqueceu sua senha? Clica aqui
          </Text>
       </TouchableOpacity>
@@ -90,8 +90,8 @@ export function Login({navigation}) {
         )}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => {navigation.navigate('Cadastrar')}}>
-        <Text style={style.botaoDois}>Cadastre-se
-        <FontAwesome5 name="candy-cane" size={24} color="brown"/>
+        <Text style={style.botaoDois}>Cadastre-se 
+        <FontAwesome5 name="candy-cane" size={22} color="brown"/>
         </Text>
       </TouchableOpacity>
       </View>

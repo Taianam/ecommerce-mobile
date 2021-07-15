@@ -12,11 +12,15 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
 
-  logo: {
-    width: 250,
-    height: 140,
-    alignItems: 'center',
-    justifyContent: 'center'
+  title: {
+    color: '#000',
+    fontSize: 24,
+    marginBottom: 15,
+    backgroundColor: '#FFC0CB',
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 8,
+
   },
 
   form: {
@@ -24,13 +28,13 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#A0522D',
-    marginBottom: 15,
     width: 300,
     height: 50,
     paddingHorizontal: 12,
     paddingVertical: 7,
-    fontSize: 12,
-    justifyContent: 'center',
+    fontSize: 13,
+    marginBottom: 15,
+    
   },
 
   button: {
@@ -44,9 +48,10 @@ export const styles = StyleSheet.create({
     borderColor: '#A0522D',
   },
 
-  title: {
+  buttonTitle: {
     flex: 1,
     textAlign: 'center',
-    color: '#000',
+    color: '#000'
   }
+
 })
