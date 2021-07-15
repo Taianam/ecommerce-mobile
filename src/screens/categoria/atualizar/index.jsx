@@ -6,10 +6,12 @@ import {
 	TouchableOpacity,
 	TextInput,
 	ImageBackground,
+	Image,
 } from "react-native";
 
 import apiCategoria from "../../../service/api.categoria";
 import styles from "./style";
+import logoAtualizar from "../../../assets/atualizarfita.png";
 
 function AtualizarCategoria({ categoria, atualizar }) {
 	const [nome, setNome] = React.useState("");
@@ -42,8 +44,8 @@ function AtualizarCategoria({ categoria, atualizar }) {
 				source={require("../../../assets/BcgDoces.jpeg")}
 				style={styles.image}
 			>
+				<Image style={styles.imagem} source={logoAtualizar} />
 				<View style={styles.form}>
-					<Text style={styles.titulo}>Atualização de categoria</Text>
 					<TextInput
 						style={styles.imput}
 						value={nome}
@@ -64,7 +66,7 @@ function AtualizarCategoria({ categoria, atualizar }) {
 						activeOpacity={0.9}
 						onPress={hendleCadastrar}
 					>
-						<Text style={styles.title}>Cadastrar</Text>
+						<Text style={styles.title}>Atualizar</Text>
 					</TouchableOpacity>
 				</View>
 			</ImageBackground>

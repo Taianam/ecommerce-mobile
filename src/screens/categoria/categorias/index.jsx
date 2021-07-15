@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import { ModalCustom } from "../../../components/modal";
 import { EvilIcons } from "@expo/vector-icons";
 
@@ -9,6 +9,8 @@ import api from "../../../service/api.categoria";
 
 import Atualizar from "../atualizar";
 import Cadastrar from "../cadastrar";
+
+import logoAtualizar from "../../../assets/categoria.png";
 
 function Categorias() {
 	const [categorias, setCategorias] = React.useState([]);
@@ -25,6 +27,7 @@ function Categorias() {
 
 	return (
 		<View style={styles.container}>
+			<Image style={styles.imagem} source={logoAtualizar} />
 			<ScrollView>
 				<View>
 					<TouchableOpacity style={styles.nova}>

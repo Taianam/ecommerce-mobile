@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
 		textAlignVertical: "center",
 		height: "100%",
 	},
+
+	imagem: {
+		width: 350,
+		height: 150,
+	},
 });
 
 export default styles;

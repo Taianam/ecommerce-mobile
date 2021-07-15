@@ -49,13 +49,17 @@ const styles = StyleSheet.create({
 	form: {
 		flex: 1,
 		alignItems: "center",
-		justifyContent: "center",
 	},
 
 	titulo: {
 		textAlign: "center",
 		color: "#000",
 		fontSize: 40,
+	},
+
+	imagem: {
+		width: 350,
+		height: 150,
 	},
 });
 

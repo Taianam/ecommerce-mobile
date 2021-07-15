@@ -6,12 +6,15 @@ import {
 	TouchableOpacity,
 	TextInput,
 	ImageBackground,
+	Image,
 } from "react-native";
 
 import styles from "./style";
 import apiCategoria from "../../../service/api.categoria";
 
 const fundo = { uri: "https://i.ibb.co/S5WCBtc/2.jpg" };
+
+import logoAtualizar from "../../../assets/cadastrarcategoria.png";
 
 function cadastrarCategoria({ atualizar }) {
 	const [nome, setNome] = React.useState("");
@@ -41,8 +44,8 @@ function cadastrarCategoria({ atualizar }) {
 				source={require("../../../assets/BcgDoces.jpeg")}
 				style={styles.image}
 			>
+				<Image style={styles.imagem} source={logoAtualizar} />
 				<View style={styles.form}>
-					<Text style={styles.titulo}>Cadastro de categoria</Text>
 					<TextInput
 						style={styles.imput}
 						value={nome}
