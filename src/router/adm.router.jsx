@@ -1,18 +1,33 @@
-import * as React from "react";
-import { Button, View } from "react-native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import React from "react";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Home } from "../screens/produto/home";
 import { Cadastrar } from "../screens/produto/cadastrar";
 
-const Adm = createDrawerNavigator();
+const Adm = createMaterialBottomTabNavigator();
 
 export function AdmRouter() {
-
-
-  return (
-    <Adm.Navigator initialRouteName="Home">
-      <Adm.Screen name="Produtos" component={Home} />
-      <Adm.Screen name="Cadastrar" component={Cadastrar} />
-    </Adm.Navigator>
-  );
+    return (
+        <Adm.Navigator
+            initialRouteName="Home"
+            activeColor="#f0edf6"
+            inactiveColor="#04205c"
+            barStyle={{ backgroundColor: "#3a5ca5" }}
+        >
+            <Adm.Screen
+                name="Produtos"
+                component={Home}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <FontAwesome5
+                            name="home"
+                            size={22}
+                            color={focused ? "#f0edf6" : "#17377c"}
+                        />
+                    ),
+                }}
+            />
+            <Adm.Screen name="Cadastrar" component={Cadastrar} />
+        </Adm.Navigator>
+    );
 }

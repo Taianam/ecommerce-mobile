@@ -6,17 +6,20 @@ import { MainRouter } from "./src/router/main.router";
 import { ProvedorDeAutentificacao } from "./src/hooks/autenticar";
 import "./src/service/firebase";
 import { LogBox } from "react-native";
+import { DarkModeContexto } from "./src/hooks/darkMode";
 LogBox.ignoreLogs(["Setting a timer"]);
 
 export default function App() {
-	return (
-		<SafeAreaProvider style={{ paddingTop: 24 }}>
-			<StatusBar style="light" backgroundColor="#3a5ca5" />
-			<ProvedorDeAutentificacao>
-				<NavigationContainer>
-					<MainRouter />
-				</NavigationContainer>
-			</ProvedorDeAutentificacao>
-		</SafeAreaProvider>
-	);
+    return (
+        <SafeAreaProvider style={{ paddingTop: 24 }}>
+            <StatusBar style="light" backgroundColor="#3a5ca5" />
+            <DarkModeContexto>
+                <ProvedorDeAutentificacao>
+                    <NavigationContainer>
+                        <MainRouter />
+                    </NavigationContainer>
+                </ProvedorDeAutentificacao>
+            </DarkModeContexto>
+        </SafeAreaProvider>
+    );
 }

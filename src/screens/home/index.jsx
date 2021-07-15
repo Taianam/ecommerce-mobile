@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import api from "../../service/api";
 import Interface from "../../assets/Interface.png";
 import { Cards } from "../../components/cards/cardsHome";
-import { style } from "./style";
+import { styleLight, styleDark } from "./style";
 import { View, Text, Image, ScrollView, TextInput } from "react-native";
 import { NotFound } from "../../components/notfound";
+import { usarDarkModeContexto } from "../../hooks/darkMode";
 
 export function Home() {
     const [produtos, setProdutos] = useState([]);
     const [produtosFiltrados, setProdutosFiltrados] = useState([]);
+
+    const { dark } = usarDarkModeContexto();
+    const style = dark ? styleLight : styleDark
 
     useEffect(() => {
         obterProduto();
