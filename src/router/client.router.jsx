@@ -7,6 +7,7 @@ import { Chat } from "../screens/chat";
 import { Sair } from "../screens/sair";
 import { Notificacao } from "../context/notificacao";
 import { usarDarkModeContexto } from "../context/darkMode";
+import { Sobre } from "../screens/sobre"
 
 const App = createDrawerNavigator();
 
@@ -34,6 +35,7 @@ export function ClientRouter() {
                     <App.Screen name="Home" component={Home} />
                     <App.Screen name="Carrinho" component={Carrinho} />
                     <App.Screen name="Menssagem" component={Chat} />
+                    <App.Screen name="Sobre" component={Sobre} />
                     <App.Screen name="Sair" component={Sair} />
                     
                 </App.Navigator>
