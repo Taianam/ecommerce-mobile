@@ -40,4 +40,4 @@ const deletarProduto =async (id)=>{
   
 }
 
-export {obterProduto, cadastrarProduto, atualizarProduto,deletarProduto}
+export {obterProduto, cadastrarProduto, atualizarProduto, deletarProduto}
