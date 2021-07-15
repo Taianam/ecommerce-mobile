@@ -43,8 +43,9 @@ export default function Cadastrar({navigation}){
 }
 
   return(
-    <ImageBackground source={fundo} style={styles.fundo}>
+  
     <View style={styles.container}>
+
       <Image source={cadastroLogo} style={styles.text}/>
         <TextInput style={styles.form}
           label="Nome"
@@ -105,8 +106,7 @@ export default function Cadastrar({navigation}){
           </Text>
 
         </TouchableOpacity>
-        
     </View>
-    </ImageBackground>
+
   )
 }

@@ -23,6 +23,7 @@ try {
 const atualizarProduto =async (id, novoProduto)=>{
     try {
         const {data}= await api.put(`produtos/${id}`, novoProduto)
+        console.log(data)
         return data
     } catch (error) {
      console.log(error)   

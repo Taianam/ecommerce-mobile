@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
-  conteiner: {
-    alignItems: "center",
-    justifyContent: "center",
-
+  fundo: {
+    flex: 1,
+    width: '100%'
   },
+
   imagem: {
-    width: 350,
-    height: 150,
+    width: 400,
+    height: 200,
   },
   imput: {
     backgroundColor: "#FFC0CB",
@@ -21,10 +21,12 @@ export const style = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 7,
     fontSize: 12,
+    marginLeft: 50,
   },
   button: {
+    marginLeft: 50,
     width: 300,
-    height: 0,
+    height: 40,
     paddingHorizontal: 12,
     paddingVertical: 7,
     backgroundColor: "#F2B6BB",

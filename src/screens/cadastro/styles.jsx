@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 7,
     fontSize: 12,
-    
+    justifyContent: 'center',
   },
 
   button: {

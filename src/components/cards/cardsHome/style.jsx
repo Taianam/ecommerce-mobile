@@ -27,6 +27,7 @@ export const style = StyleSheet.create({
         backgroundColor: "#ffffff",
         marginTop: 20,
         borderRadius: 6,
+        marginHorizontal: 10
     },
  font: {
     fontSize: 18

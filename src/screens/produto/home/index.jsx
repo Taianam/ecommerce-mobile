@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
-  Image,
-  TouchableOpacity,
   ScrollView,
+  TouchableOpacity,
   TextInput,
 } from "react-native";
 import { ModalCustom } from "../../../components/modal";
@@ -21,27 +20,28 @@ export function Home() {
 
   //Função para chamar os produtos na api
   const obterTodosOsProduto = async () => {
-    const  data  = await obterProduto();
+    const data = await obterProduto();
     setProdutos(data);
   };
 
-
-
-  
   return (
     <View>
       <Text>Ola</Text>
-      {produtos.map((p) => (
-        <View key={p.id}>
-          <Text>{p.nome}</Text>
-          <ModalCustom
-            fechar={"Cancelar"}
-            icone={<Ionicons name="md-paper-plane" size={35} color="#0ca6ee" />}
-          >
-            <Atualizar produto={p} />
-          </ModalCustom>
-        </View>
-      ))}
+      <ScrollView>
+        {produtos.map((p) => (
+          <View key={p.id}>
+            <Text>{p.nome}</Text>
+            <ModalCustom
+              fechar={"Cancelar"}
+              icone={
+                <Ionicons name="md-paper-plane" size={35} color="#0ca6ee" />
+              }
+            >
+              <Atualizar produto={p} atualizarHomeProduto={obterTodosOsProduto} />
+            </ModalCustom>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }

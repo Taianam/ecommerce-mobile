@@ -1,9 +1,13 @@
 
 import React, { useEffect, useState, useRef } from "react";
-import { View, TextInput, TouchableOpacity, Text } from "react-native";
+import { View, TextInput, TouchableOpacity, Text, Image, ImageBackground } from "react-native";
 import { Data } from "../../../components/data";
 import { Picker } from "@react-native-picker/picker";
+import { style } from "./style";
+import logoCadastrar from "../../../assets/cadastrodeprodutos.png"
+import api from "../../../service/api";
 
+const fundo = {uri: 'https://i.ibb.co/S5WCBtc/2.jpg'}
 
 export function Cadastrar() {
   const [nome, setNome] = useState();
@@ -14,8 +18,6 @@ export function Cadastrar() {
   const [dataCadastro, setDataCadastro] = useState();
   const [categoria, setCategoria] = useState([]);
   const [categoriaId, setCategoriaId] = useState([]);
-
-  const [selectedLanguage, setSelectedLanguage] = useState();
 
   // Função que recebe uma data do compenente DATA e inseri no estado.
   function inserirDataCadastro(data) {
@@ -56,37 +58,40 @@ export function Cadastrar() {
 
   return (
     <View>
+      <ImageBackground source={fundo} >
+      <Image style={style.imagem} source={logoCadastrar}/>
       <TextInput
-        style={{ backgroundColor: "violet", margin: 20 }}
+        style={style.imput}
         value={nome}
         onChangeText={setNome}
         placeholder="Nome"
       />
       <TextInput
-        style={{ backgroundColor: "violet", margin: 20 }}
+        style={style.imput}
         value={descricao}
         onChangeText={setDescricao}
         placeholder="Descrição"
       />
       <TextInput
-        style={{ backgroundColor: "violet", margin: 20 }}
+       style={style.imput}
         value={imagem}
         onChangeText={setImagem}
         placeholder="Imagem"
       />
       <TextInput
-        style={{ backgroundColor: "violet", margin: 20 }}
+        style={style.imput}
         value={estoque}
         onChangeText={setEstoque}
         placeholder="Estoque"
       />
       <TextInput
-        style={{ backgroundColor: "violet", margin: 20 }}
+        style={style.imput}
         value={preco}
         onChangeText={setPreco}
         placeholder="Preço"
       />
       <Picker
+      style={style.imput}
         selectedValue={categoriaId}
         onValueChange={(itemValue) => setCategoriaId(itemValue)}
       >
@@ -95,9 +100,10 @@ export function Cadastrar() {
         ))}
       </Picker>
       <Data inserirDataCadastro={inserirDataCadastro} />
-      <TouchableOpacity onPress={cadastrarProduto}>
+      <TouchableOpacity style={style.button} onPress={cadastrarProduto}>
         <Text>Cadastrar</Text>
       </TouchableOpacity>
+      </ImageBackground>
     </View>
   );
 }
