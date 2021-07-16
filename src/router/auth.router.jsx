@@ -3,8 +3,8 @@ import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Login } from "../screens/login";
 import Cadastrar from "../screens/cadastro";
-// import RecuperarSenha from '../screens/senha/recuperarSenha';
-// import NovaSenha from "../screens/senha/novaSenha";
+import RecuperarSenha from '../screens/senha/recuperarSenha';
+import NovaSenha from "../screens/senha/novaSenha";
 
 const Auth = createStackNavigator();
 

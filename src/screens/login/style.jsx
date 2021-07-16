@@ -27,27 +27,31 @@ export const style = StyleSheet.create({
         marginBottom:1,
         
     },
-    botao: {
+    acao:{
         flexDirection: 'row',
         marginTop: 30,
-        backgroundColor: "#FFC0CB",
-        marginLeft: 18,
-        width: "90%",
-        borderRadius: 30,
-        borderWidth: 4,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 30
+    },
+    botao:{
+        backgroundColor: "#FFC0CB", 
         borderColor: "#A0522D",
+        borderRadius: 30,
+        width: "40%",
+        height: 40,
+        borderWidth: 4,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    botaoTexto: {
         fontSize: 25,
         textAlign: "center",
-        paddingLeft: 4,
-        paddingTop: 2,
-        paddingRight: 10,
-        marginBottom: 2
     },
     botaoDois: {
         flexDirection: 'row',
-        marginTop: 30,
         backgroundColor: "white",
-        marginLeft: 55,
+        marginLeft: 20,
         width: "90%",
         borderRadius: 30,
         borderWidth: 4,

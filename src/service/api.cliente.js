@@ -2,8 +2,7 @@ import api from '../service/api'
 
 const obterCliente = async () => {
   try {
-    const {data} = await api.get('clientes');
-    return data;
+    return {data} = await api.get('clientes');
   } catch (error) {
     console.log(error)
   }

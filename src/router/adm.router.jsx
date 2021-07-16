@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Home } from "../screens/produto/home";
-import { Cadastrar } from "../screens/produto/cadastrar";
+import { Categorias } from "../screens/categoria/categorias";
 
 const Adm = createMaterialBottomTabNavigator();
 
@@ -27,7 +27,7 @@ export function AdmRouter() {
                     ),
                 }}
             />
-            <Adm.Screen name="Cadastrar" component={Cadastrar} />
+            <Adm.Screen name="Categoria" component={Categorias} />
         </Adm.Navigator>
     );
 }

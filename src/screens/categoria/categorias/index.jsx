@@ -12,7 +12,7 @@ import Cadastrar from "../cadastrar";
 
 import logoAtualizar from "../../../assets/categoria.png";
 
-function Categorias() {
+export function Categorias() {
 	const [categorias, setCategorias] = React.useState([]);
 
 	React.useEffect(() => {
@@ -60,5 +60,3 @@ function Categorias() {
 		</View>
 	);
 }
-
-export default Categorias;

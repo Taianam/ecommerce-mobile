@@ -25,6 +25,7 @@
     "expo-notifications": "^0.12.3",
     "expo-status-bar": "~1.0.4",
     "firebase": "8.2.3",
+    "native-base": "^3.0.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
@@ -35,10 +36,13 @@
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.0.0",
     "react-native-snap-carousel": "^3.9.1",
+    "react-native-svg": "^12.1.1",
     "react-native-web": "~0.13.12",
     "react-native-webview": "^11.6.5",
     "react-navigation": "^4.4.4",
-    "react-navigation-material-bottom-tabs": "^2.3.4"
+    "react-navigation-material-bottom-tabs": "^2.3.4",
+    "styled-components": "^5.3.0",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
