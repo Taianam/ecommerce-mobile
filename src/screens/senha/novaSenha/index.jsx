@@ -16,11 +16,11 @@ export default function NovaSenha({navigation}){
 
   const handlerNovaSenha = async () => {
     const novaSenha = {
-      codigo,
+      chave:codigo,
       senha: newSenha,
     }
 
-    await api.patch('recupera/email', novaSenha)
+    await api.patch('recuperar/email', novaSenha)
     navigation.navigate('Login')
 
   }
