@@ -11,71 +11,69 @@ import { ModalCustom } from "../../../components/modal";
 import { Cadastrar } from "../cadastrar";
 
 export function Home() {
-    const [produtos, setProdutos] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const { efetuarLogoff } = usarProvedorDeAutentificacao();
-    const toast = useToast();
+  const [produtos, setProdutos] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { efetuarLogoff } = usarProvedorDeAutentificacao();
+  const toast = useToast();
 
-    useEffect(() => {
-        obterTodosOsProduto();
-    }, []);
+  useEffect(() => {
+    obterTodosOsProduto();
+  }, []);
 
-    //Função para chamar os produtos na api
-    const obterTodosOsProduto = async () => {
-        setLoading(true);
-        const data = await obterProduto();
-        setProdutos(data);
-        setLoading(false);
-    };
+  //Função para chamar os produtos na api
+  const obterTodosOsProduto = async () => {
+    setLoading(true);
+    const data = await obterProduto();
+    setProdutos(data);
+    setLoading(false);
+  };
 
-    // Função que deleta um produto por ID e atualiza os produtos em tela
-    const deletarProdutoPorId = async (id) => {
-        setLoading(true);
-        await deletarProduto(id);
-        toast.show({
-            title: "Produto deletado com sucesso",
-            status: "success",
-        });
-        setLoading(false);
-        obterTodosOsProduto();
-    };
+  // Função que deleta um produto por ID e atualiza os produtos em tela
+  const deletarProdutoPorId = async (id) => {
+    setLoading(true);
+    await deletarProduto(id);
+    toast.show({
+      title: "Produto deletado com sucesso",
+      status: "success",
+    });
+    setLoading(false);
+    obterTodosOsProduto();
+  };
 
-    return (
-        <ScrollView>
-            <View style={style.container}>
-                {loading ? (
-                    <Spinner size="lg" />
-                ) : (
-                    <>
-                        <TouchableOpacity onPress={() => efetuarLogoff()}>
-                            <Text> Sair </Text>
-                        </TouchableOpacity>
-                        <ModalCustom
-                            fechar={"Fechar"}
-                            icone={
-                                <View style={{flexDirection: 'row'}}>
-                                    <Text> Novo produto </Text>
-                                    <EvilIcons
-                                        name="pencil"
-                                        size={28}
-                                        color="black"
-                                    />
-                                </View>
-                            }
-                        >
-                            <Cadastrar />
-                        </ModalCustom>
-                        {produtos.map((p) => (
-                            <CardsProdutos
-                                key={p.id}
-                                produto={p}
-                                obterTodosOsProduto={obterTodosOsProduto}
-                                deletarProdutoPorId={deletarProdutoPorId}
-                            />
-                        ))}
-                    </>
-                )}
-            </View>
-        </ScrollView>
-    );
+  return (
+    <ScrollView>
+      <View>
+        {loading ? (
+          <Spinner size="lg" />
+        ) : (
+          <>
+            <TouchableOpacity onPress={() => efetuarLogoff()}>
+              <Text> Sair </Text>
+            </TouchableOpacity>
+
+            <ModalCustom
+              fechar={"Fechar"}
+              icone={
+                <View style={style.button}>
+                  <Text> Novo produto </Text>
+                  <EvilIcons name="pencil" size={28} color="black" />
+                </View>
+              }
+            >
+              <Cadastrar />
+            </ModalCustom>
+
+            {produtos.map((p) => (
+              <CardsProdutos
+                key={p.id}
+                produto={p}
+                obterTodosOsProduto={obterTodosOsProduto}
+                deletarProdutoPorId={deletarProdutoPorId}
+              />
+            ))}
+          </>
+        )}
+      </View>
+    </ScrollView>
+  );
 }

@@ -3,6 +3,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Home } from "../screens/produto/home";
 import { Categorias } from "../screens/categoria/categorias";
+import { Chat} from "../screens/chat"
 
 const Adm = createMaterialBottomTabNavigator();
 
@@ -28,6 +29,7 @@ export function AdmRouter() {
                 }}
             />
             <Adm.Screen name="Categoria" component={Categorias} />
+            <Adm.Screen name="Menssagem" component={Chat} />
         </Adm.Navigator>
     );
 }

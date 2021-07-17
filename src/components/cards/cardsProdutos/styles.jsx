@@ -4,7 +4,7 @@ export const style = StyleSheet.create({
     card:{
         marginVertical: 8,
         flexDirection: 'row',
-        backgroundColor: '#ddd',
+        backgroundColor: "#FFC0CB",
         paddingVertical: 5,
         paddingHorizontal: 10,
         justifyContent: 'space-between'
@@ -18,9 +18,10 @@ export const style = StyleSheet.create({
     },
     titulo:{
         fontSize: 20,
-        marginLeft: 10
+        marginLeft: 6
     }, 
     acao:{
         flexDirection: 'row'
-    }
+    },
+  
 })
