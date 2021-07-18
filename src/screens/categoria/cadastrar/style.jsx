@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
 	},
 
 	image: {
-		width: "100%",
-		height: "100%",
+	flex: 1,
 	},
 
 	button: {
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
 	},
 
 	imagem: {
-		width: 350,
+		width: 400,
 		height: 150,
 	},
 });

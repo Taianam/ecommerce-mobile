@@ -10,7 +10,7 @@ export function ModalCustom({ children, icone, fechar, atualizar }) {
 			<Modal animationType="slide" transparent={true} visible={modalVisible}>
 				<View
 					style={{
-						backgroundColor: "#ccc",
+						backgroundColor: "#f59db4",
 						flex: 1,
 						alignItems: "center",
 						justifyContent: "center",
@@ -18,11 +18,12 @@ export function ModalCustom({ children, icone, fechar, atualizar }) {
 				>
 					{children}
 					<TouchableOpacity
+				
 						onPress={() => {
 							setModalVisible(!modalVisible);
 						}}
 					>
-						<Text style={{ fontSize: 16 }}>{fechar}</Text>
+						<Text style={{ fontSize: 25, color:"#504f4f" }}>{fechar}</Text>
 					</TouchableOpacity>
 				</View>
 			</Modal>

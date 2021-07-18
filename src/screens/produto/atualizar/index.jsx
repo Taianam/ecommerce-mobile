@@ -42,8 +42,7 @@ export function Atualizar({ produto, atualizarHomeProduto }) {
       dataDeCadastro: dataCadastro,
       preco: preco,
     };
-    console.log(novoProduto)
-    const data = await atualizarProduto(produto.id, novoProduto);
+     await atualizarProduto(produto.id, novoProduto);
     atualizarHomeProduto();
   };
 

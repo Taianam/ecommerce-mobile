@@ -2,15 +2,35 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
     container: {
-        flexDirection:"row"
+        flexDirection:"row",
+        justifyContent: "space-between",
     },
     button: {
-        justifyContent: "flex-end",
-        width: 150,
+        
         padding: 10,
-        backgroundColor: "#F2B6BB",
+        backgroundColor: "#fc7782",
         borderRadius: 4,
         borderColor: "#A0522D",
         flexDirection: "row",
+        margin: 12,
       },
+      buttonSair: {
+        
+        padding: 10,
+        backgroundColor: "#A0522D",
+        borderRadius: 4,
+        color: '#FFF',
+        flexDirection: "row",
+        margin: 12,
+      },
+      img:{
+          width: "100%",
+          height: "20%",
+      },
+      texto:{
+          color: "#fff",
+      },
+      image: {
+		flex: 1,
+	},
 });

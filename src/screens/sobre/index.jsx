@@ -2,7 +2,7 @@ import React from "react";
 import {View, Text, StyleSheet, Image, ScrollView} from "react-native"
 import logo from "../../../assets/logo1.png"
 import logoPrincipal from '../../assets/sobrenos.png'
-import { styles } from './style';
+import  styles  from './style';
 
 function Sobre(){
 

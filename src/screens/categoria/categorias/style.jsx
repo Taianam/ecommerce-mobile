@@ -1,58 +1,70 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: "center",
-		backgroundColor: "#f08080",
-	},
+  container: {
+    flex: 1,
+    backgroundColor: "#f08080",
+  },
+  botaos: {
+	flexDirection:"row",
+	justifyContent: "space-between",
+},
 
-	itens: {
-		flexDirection: "row",
-		borderWidth: 1,
-		borderColor: "#fff",
-		backgroundColor: "#fff",
-		borderRadius: 5,
-		padding: 5,
-		width: "80%",
-		marginVertical: 5,
-		justifyContent: "space-between",
-		alignSelf: "center",
-		alignContent: "center",
-	},
+  itens: {
+    flexDirection: "row",
+    borderWidth: 1,
+    borderColor: "#c27676e6",
+    backgroundColor: "#f7baba",
+    borderRadius: 5,
+    padding: 5,
+    width: "95%",
+    marginVertical: 5,
+    justifyContent: "space-between",
+    alignSelf: "center",
+  },
 
-	botao: {
-		width: "5%",
-	},
+  botao: {
+    width: "5%",
+  },
+  buttonSair: {
+    padding: 10,
+    backgroundColor: "#A0522D",
+    borderRadius: 4,
+    flexDirection: "row",
+    margin: 12,
+  },
+  texto: {
+    color: "#fff",
+  },
 
-	nova: {
-		marginTop: 30,
-		marginBottom: 5,
-		padding: 5,
-		borderRadius: 5,
-		alignSelf: "flex-end",
-		backgroundColor: "#fff",
-		marginHorizontal: "10%",
-	},
+  nova: {
+    backgroundColor: "#fc7782",
+    margin: 12,
+    paddingHorizontal: 40,
+    padding: 15,
+    borderRadius: 5,
+    alignSelf: "flex-end",
+  },
 
-	nome: {
-		height: "100%",
-		maxWidth: "35%",
-		textAlign: "center",
-		textAlignVertical: "center",
-	},
+  nome: {
+    textAlign: "center",
+    textAlignVertical: "center",
+  },
 
-	descricao: {
-		maxWidth: "40%",
-		textAlign: "center",
-		textAlignVertical: "center",
-		height: "100%",
-	},
+  descricao: {
+    maxWidth: "40%",
+    textAlign: "center",
+    textAlignVertical: "center",
+    height: "100%",
+  },
 
-	imagem: {
-		width: 350,
-		height: 150,
-	},
+  imagem: {
+    width: "100%",
+    height: "20%",
+  },
+  image: {
+    flex: 1,
+  },
 });
 
 export default styles;

@@ -7,7 +7,8 @@ import {Text,
         View,
         TextInput,
         TouchableOpacity,
-        ImageBackground } from "react-native";
+        ImageBackground, Image} from "react-native";
+import Senha from "../../../assets/novaSenha.png";        
 
 const fundo = { uri: "https://i.ibb.co/S5WCBtc/2.jpg" };
 
@@ -73,12 +74,14 @@ export default function NovaSenha({ navigation }) {
 
     return (
         <ImageBackground source={fundo} style={styles.fundo}>
+        
             <View style={styles.container}>
                 {loading ? (
                     <Spinner size="lg" />
                 ) : (
                     <>
-                        <Text style={styles.title}>Digite sua nova senha</Text>
+                        <Image style={styles.imagem} source={Senha}/>
+                        <Text style={styles.title}>Digite seu código e sua nova senha</Text>
                         <TextInput
                             style={styles.form}
                             label="Código"

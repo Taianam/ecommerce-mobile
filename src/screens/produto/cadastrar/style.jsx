@@ -3,12 +3,14 @@ import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
   fundo: {
     flex: 1,
+    alignItems:'center',
+    justifyContent:'center',
     backgroundColor: "#aa4a1e92",
   },
 
   imagem: {
     width: 400,
-    height: 200,
+    height: 150,
   },
   imput: {
     backgroundColor: "#FFC0CB",
@@ -21,10 +23,10 @@ export const style = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 7,
     fontSize: 12,
-    marginLeft: 50,
+
+    
   },
   button: {
-    marginLeft: 50,
     width: 300,
     height: 40,
     paddingHorizontal: 12,

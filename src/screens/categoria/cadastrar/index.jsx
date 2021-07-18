@@ -16,7 +16,7 @@ const fundo = { uri: "https://i.ibb.co/S5WCBtc/2.jpg" };
 
 import logoAtualizar from "../../../assets/cadastrarcategoria.png";
 
-function cadastrarCategoria({ atualizar }) {
+function cadastrarCategoria() {
 	const [nome, setNome] = React.useState("");
 	const [descricao, setDescricao] = React.useState("");
 

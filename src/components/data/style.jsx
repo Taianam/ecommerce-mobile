@@ -14,7 +14,7 @@ export const style = StyleSheet.create({
         paddingHorizontal: 12,
         paddingVertical: 7,
         fontSize: 12,
-        marginLeft:50
+    
     },
     
 })

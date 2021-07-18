@@ -7,7 +7,7 @@ import { Chat } from "../screens/chat";
 import { Sair } from "../screens/sair";
 import { Notificacao } from "../context/notificacao";
 import { usarDarkModeContexto } from "../context/darkMode";
-import { Sobre } from "../screens/sobre"
+import  Sobre  from "../screens/sobre"
 
 const App = createDrawerNavigator();
 

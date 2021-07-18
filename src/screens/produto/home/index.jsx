@@ -3,12 +3,13 @@ import { obterProduto, deletarProduto } from "../../../service/api.produto";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { usarProvedorDeAutentificacao } from "../../../context/autenticar";
 import { style } from "./styles";
-import { EvilIcons } from "@expo/vector-icons";
+import { EvilIcons, Feather } from "@expo/vector-icons";
 import { CardsProdutos } from "../../../components/cards/cardsProdutos";
 import { useToast, Spinner } from "native-base";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, ImageBackground, Image, Alert } from "react-native";
 import { ModalCustom } from "../../../components/modal";
 import { Cadastrar } from "../cadastrar";
+import Produto from "../../../assets/produtos.png";
 
 export function Home() {
   const [produtos, setProdutos] = useState([]);
@@ -30,50 +31,83 @@ export function Home() {
 
   // Função que deleta um produto por ID e atualiza os produtos em tela
   const deletarProdutoPorId = async (id) => {
-    setLoading(true);
-    await deletarProduto(id);
-    toast.show({
-      title: "Produto deletado com sucesso",
-      status: "success",
-    });
-    setLoading(false);
-    obterTodosOsProduto();
+    Alert.alert(
+			"Deletar Produto",
+			"Deseja deletar esse produto?",
+			[
+				{
+					text: "Cancelar",
+
+				},
+				{
+					text: "Sim",
+					onPress: async () =>{ await deletarProduto(id), 
+            setLoading(true);
+          toast.show({
+            title: "Produto deletado com sucesso",
+            status: "success",
+          })
+          setLoading(false);
+          obterTodosOsProduto();
+        }
+				},
+			]
+		);
+ 
+    
+  
+ 
   };
 
   return (
-    <ScrollView>
+    <ImageBackground
+      source={require("../../../assets/BcgDoces.jpeg")}
+      style={style.image}
+    >
+      <Image source={Produto} style={style.img} />
+
       <View>
         {loading ? (
           <Spinner size="lg" />
         ) : (
           <>
-            <TouchableOpacity onPress={() => efetuarLogoff()}>
-              <Text> Sair </Text>
-            </TouchableOpacity>
+            <View style={style.container}>
+              <ModalCustom
+                fechar={"Fechar"}
+                icone={
+                  <View style={style.button}>
+                    <Text> Cadastrar produto </Text>
+                    <EvilIcons name="pencil" size={24} color="black" />
+                  </View>
+                }
+              >
+                <Cadastrar />
+              </ModalCustom>
 
-            <ModalCustom
-              fechar={"Fechar"}
-              icone={
-                <View style={style.button}>
-                  <Text> Novo produto </Text>
-                  <EvilIcons name="pencil" size={28} color="black" />
-                </View>
-              }
-            >
-              <Cadastrar />
-            </ModalCustom>
+              <TouchableOpacity
+                style={style.buttonSair}
+                onPress={() => efetuarLogoff()}
+              >
+                <Text style={style.texto}>
+                  {" "}
+                  Sair <Feather name="log-out" size={15} color="white" />{" "}
+                </Text>
+              </TouchableOpacity>
+            </View>
+           
+              {produtos.map((p) => (
+               
+                <CardsProdutos
+                  key={p.id}
+                  produto={p}
+                  obterTodosOsProduto={obterTodosOsProduto}
+                  deletarProdutoPorId={deletarProdutoPorId}
+                />
 
-            {produtos.map((p) => (
-              <CardsProdutos
-                key={p.id}
-                produto={p}
-                obterTodosOsProduto={obterTodosOsProduto}
-                deletarProdutoPorId={deletarProdutoPorId}
-              />
-            ))}
+              ))}
           </>
         )}
       </View>
-    </ScrollView>
+    </ImageBackground>
   );
 }

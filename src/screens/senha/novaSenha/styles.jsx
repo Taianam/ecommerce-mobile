@@ -6,7 +6,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-
+  imagem: {
+    width: "100%",
+    height: "20%",
+  },
   fundo: {
     flex: 1,
     width: '100%'
@@ -14,9 +17,9 @@ export const styles = StyleSheet.create({
 
   title: {
     color: '#000',
-    fontSize: 24,
+    fontSize: 17,
     marginBottom: 15,
-    backgroundColor: '#FFC0CB',
+    backgroundColor: '#ffa8b7',
     paddingHorizontal: 12,
     paddingVertical: 7,
     borderRadius: 8,

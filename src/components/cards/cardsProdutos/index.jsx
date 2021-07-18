@@ -2,7 +2,7 @@ import React from "react";
 import { ModalCustom } from "../../modal";
 import { EvilIcons } from "@expo/vector-icons";
 import { Atualizar } from "../../../screens/produto/atualizar";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { style } from "./styles";
 
 export function CardsProdutos({
@@ -11,6 +11,7 @@ export function CardsProdutos({
     deletarProdutoPorId,
 }) {
     return (
+        <ScrollView>
         <View style={style.card}>
             <View style={style.descricao}>
                 <Text style={style.tituloID}>{produto.id}</Text>
@@ -34,5 +35,6 @@ export function CardsProdutos({
                 />
             </View>
         </View>
+        </ScrollView>
     );
 }

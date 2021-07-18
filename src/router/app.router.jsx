@@ -9,13 +9,14 @@ const App = createStackNavigator();
 export function AppRouter() {
 	const { user } = usarProvedorDeAutentificacao();
 
+	console.log(user.funcionario)
 	return (
 		<App.Navigator
 			screenOptions={{
 				headerShown: false,
 			}}
 		>
-			<App.Screen name="App" component={true? AdmRouter : ClientRouter} />
+			<App.Screen name="App" component={user.funcionario? AdmRouter : ClientRouter} />
 		</App.Navigator>
 	);
 }

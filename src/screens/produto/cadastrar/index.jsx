@@ -5,7 +5,9 @@ import { Data } from "../../../components/data";
 import { Picker } from "@react-native-picker/picker";
 import { style } from "./style";
 import logoCadastrar from "../../../assets/cadastrodeprodutos.png"
-import api from "../../../service/api";
+import { obterProduto, deletarProduto, cadastrarProduto } from "../../../service/api.produto";
+import apiCategorias from "../../../service/api.categoria";
+
 
 
 
@@ -25,8 +27,8 @@ export function Cadastrar() {
   }
 
   // Função que vai cadastrar os produtos
-  const cadastrarProduto = async () => {
-    try {
+  const cadastroDeProduto = async () => {
+    
       const novoProduto = {
         nome: nome,
         descricao: descricao,
@@ -36,24 +38,20 @@ export function Cadastrar() {
         preco: preco,
       };
 
-      await api.post(`produtos/${categoriaId}`, novoProduto);
-    } catch (error) {
-      console.log(error);
-    }
+      await cadastrarProduto(categoriaId, novoProduto);
+ 
   };
 
   useEffect(() => {
-    obterCategorias();
+    obterCategoria();
   }, []);
   //Função que busca as categorias
-  const obterCategorias = async () => {
-    try {
-      const { data } = await api.get("categorias");
-      console.log(data);
+  const obterCategoria = async () => {
+   
+      const  data  = await apiCategorias.obterCategorias();
+    
       setCategoria(data);
-    } catch (error) {
-      console.log(error);
-    }
+  
   };
 
   return (
@@ -99,7 +97,7 @@ export function Cadastrar() {
         ))}
       </Picker>
       <Data inserirDataCadastro={inserirDataCadastro} />
-      <TouchableOpacity style={style.button} onPress={cadastrarProduto}>
+      <TouchableOpacity style={style.button} onPress={cadastroDeProduto}>
         <Text>Cadastrar</Text>
       </TouchableOpacity>
     </View>

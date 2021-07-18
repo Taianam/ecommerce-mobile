@@ -61,7 +61,7 @@ export function Carrinho() {
 			[
 				{
 					text: "Cancelar",
-					style: "cancel",
+
 				},
 				{
 					text: "Sim",

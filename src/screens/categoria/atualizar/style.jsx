@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: "center",
+		alignItems: "flex-end",
 		justifyContent: "center",
 	},
 
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 	},
 
 	imagem: {
-		width: 350,
+		width: 400,
 		height: 150,
 	},
 });

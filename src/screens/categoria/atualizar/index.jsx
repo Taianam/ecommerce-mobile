@@ -14,8 +14,8 @@ import styles from "./style";
 import logoAtualizar from "../../../assets/atualizarfita.png";
 
 function AtualizarCategoria({ categoria, atualizar }) {
-	const [nome, setNome] = React.useState("");
-	const [descricao, setDescricao] = React.useState("");
+	const [nome, setNome] = React.useState(categoria.nome);
+	const [descricao, setDescricao] = React.useState(categoria.descricao);
 
 	const hendleCadastrar = () => {
 		const novaCategoria = {
@@ -29,7 +29,7 @@ function AtualizarCategoria({ categoria, atualizar }) {
 				if (response != null) {
 					alert("Categoria atualizada com sucesso");
 					setDescricao("");
-					setNome("");
+					setNome(""); 
 					atualizar(true);
 				} else {
 					console.log(novaCategoria, response);
