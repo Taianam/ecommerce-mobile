@@ -6,17 +6,24 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "center",
 	},
+
+	imagemPrincipal: {
+		alignItems:"center",
+		justifyContent: "center",
+		width: 350,
+		height: 150,
+		marginRight: 35
+		  
+	},
+
 	image: {
 		width: 120,
 		height: 120,
 		marginVertical: 10,
+		borderRadius: 450/ 2,
+		marginLeft: 5
 	},
-	imagemPrincipal: {
-		alignItems:"center",
-			width: 400,
-			height: 150,
-		  
-	},
+
 	view: {
 		flexDirection: "row",
 		backgroundColor: "#fff",
