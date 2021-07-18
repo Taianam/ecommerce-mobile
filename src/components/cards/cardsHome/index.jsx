@@ -3,12 +3,22 @@ import { style } from "./style";
 import { usarControleCarrinho } from "../../../context/controleCarrinho";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { ModalCustom } from "../../modal";
+import { useToast } from "native-base";
 import { Descricao } from "../../descricao";
 import { AntDesign } from '@expo/vector-icons'
 
 export function Cards(props) {
     const { adicionarProdutoPorId } = usarControleCarrinho();
+    const toast = useToast();
     const { id, nome, descricao, preco, estoque, imagem } = props.produto;
+
+    const adicionarProduto = (id)=>{
+        adicionarProdutoPorId(id);
+        toast.show({
+            title: 'Produto adicionado no carrinho',
+            status: 'success'
+        })
+    }
 
     return (
         <View style={style.cont}>
@@ -29,7 +39,7 @@ export function Cards(props) {
                 <Text style={style.font}>{nome}</Text>
                 <Text>Valor: R$ {preco} </Text>
                 <TouchableOpacity
-                    onPress={() => adicionarProdutoPorId(id)}
+                    onPress={() => adicionarProduto(id)}
                     style={style.botao}
                 >
                     <Text>Comprar</Text>

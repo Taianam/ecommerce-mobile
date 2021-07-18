@@ -4,7 +4,7 @@ import logo from "../../../assets/logo1.png"
 import logoPrincipal from '../../assets/sobrenos.png'
 import { styles } from './style';
 
-function Sobre(){
+export function Sobre(){
 
     const imagem  = {uri: 'https://i.ibb.co/4mB18yP/sobrenos.png'}
 
@@ -49,7 +49,3 @@ function Sobre(){
         </ScrollView>
     );
 };
-
-
-
-export default Sobre;
