@@ -13,7 +13,7 @@ const styleLight = StyleSheet.create({
     },
     img: {
         width: "100%",
-        height: "10%",
+        height: "30%",
         
     },
     input: {

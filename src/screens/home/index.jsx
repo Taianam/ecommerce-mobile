@@ -49,8 +49,8 @@ export function Home() {
     };
 
     return (
-        <ScrollView style={style.fundo} >
-            <View style={{paddingBottom: 10, flex: 1}}>
+        <ScrollView  >
+            <View style={style.fundo} >
                 {loading ? (
                     <Spinner size="lg" />
                 ) : (

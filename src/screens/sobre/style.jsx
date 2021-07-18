@@ -12,20 +12,19 @@ const styles = StyleSheet.create({
 		marginVertical: 10,
 	},
 	imagemPrincipal: {
-		width: 250,
-		height: 140,
-		alignItems: "center",
-		justifyContent: "center",
-		marginTop: 60,
+		alignItems:"center",
+			width: 400,
+			height: 150,
+		  
 	},
 	view: {
 		flexDirection: "row",
 		backgroundColor: "#fff",
-		borderRadius: 20,
-		marginVertical: 20,
+		borderRadius: 10,
+		marginVertical: 7,
 	},
 	text: {
-		maxWidth: "50%",
+		maxWidth: "60%",
 		height: "100%",
 		marginHorizontal: 10,
 		padding: 10,
@@ -33,10 +32,7 @@ const styles = StyleSheet.create({
 		textAlignVertical: "center",
 		color: "#F08080",
 	},
-	inicio: {
-		height: 200,
-		backgroundColor: "#F08080",
-	},
+
 });
 
 export default styles;

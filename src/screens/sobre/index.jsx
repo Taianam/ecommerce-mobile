@@ -6,14 +6,13 @@ import  styles  from './style';
 
 export function Sobre(){
 
-    const imagem  = {uri: 'https://i.ibb.co/4mB18yP/sobrenos.png'}
 
 
     return(
         <ScrollView>
             <View style={styles.container}>
-            <View style={styles.inicio}>
-                <Image style={styles.imagemPrincipal} source={imagem} />
+            <View >
+                <Image style={styles.imagemPrincipal} source={logoPrincipal} />
             </View>
                 <View >
                     <View style={styles.view}>
