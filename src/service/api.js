@@ -1,7 +1,5 @@
-import axios from "axios";
+import axios from "axios"
 
-const api = axios.create({
-	baseURL: "http://192.168.1.104:8080/api/",
-});
-
-export default api;
+export default api = axios.create({
+    baseURL: "http://21fd25b513fa.ngrok.io/api/",
+  });

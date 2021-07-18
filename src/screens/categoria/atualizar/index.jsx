@@ -30,7 +30,7 @@ function AtualizarCategoria({ categoria, atualizar }) {
 					alert("Categoria atualizada com sucesso");
 					setDescricao("");
 					setNome(""); 
-					atualizar(true);
+					atualizar();
 				} else {
 					console.log(novaCategoria, response);
 					alert("Algo deu errado ☹", "Tente novamente mais tarde");

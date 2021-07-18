@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styleLight = StyleSheet.create({
     fundo: {
-        flex: 1,
+        height: '100%',
         backgroundColor: "#ecaba7",
         paddingBottom: 10
     },
@@ -29,7 +29,7 @@ const styleLight = StyleSheet.create({
 const styleDark = StyleSheet.create({
     fundo: {
         flex: 1,
-        backgroundColor: "#a7ecb6",
+        backgroundColor: "#84ceff",
         paddingBottom: 10
     },
     titulo: {
@@ -39,10 +39,14 @@ const styleDark = StyleSheet.create({
     },
     img: {
         width: "100%",
-        height: "12%",
+        height: "20%",
     },
     input: {
         paddingHorizontal: 10,
+        backgroundColor:"#FFF",
+        width: "80%",
+        textAlign: "center",
+        marginLeft:47
     }
 });
 

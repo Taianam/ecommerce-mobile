@@ -109,12 +109,12 @@ export function Login({ navigation }) {
                             <ActivityIndicator size="small" color="#000" />
                         )}
                     </TouchableOpacity>
-                    <TouchableOpacity
+                    <TouchableOpacity style={style.botaoDois}
                         onPress={() => {
                             navigation.navigate("Cadastrar");
                         }}
                     >
-                        <Text style={style.botaoDois}>
+                        <Text style={style.botaoTexto}>
                             Cadastre-se
                             <FontAwesome5
                                 name="candy-cane"

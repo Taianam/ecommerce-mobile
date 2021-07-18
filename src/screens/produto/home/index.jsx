@@ -6,7 +6,14 @@ import { style } from "./styles";
 import { EvilIcons, Feather } from "@expo/vector-icons";
 import { CardsProdutos } from "../../../components/cards/cardsProdutos";
 import { useToast, Spinner } from "native-base";
-import { View, Text, ScrollView, ImageBackground, Image, Alert } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  ImageBackground,
+  Image,
+  Alert,
+} from "react-native";
 import { ModalCustom } from "../../../components/modal";
 import { Cadastrar } from "../cadastrar";
 import Produto from "../../../assets/produtos.png";
@@ -31,32 +38,23 @@ export function Home() {
 
   // Função que deleta um produto por ID e atualiza os produtos em tela
   const deletarProdutoPorId = async (id) => {
-    Alert.alert(
-			"Deletar Produto",
-			"Deseja deletar esse produto?",
-			[
-				{
-					text: "Cancelar",
-
-				},
-				{
-					text: "Sim",
-					onPress: async () =>{ await deletarProduto(id), 
-            setLoading(true);
+    Alert.alert("Deletar Produto", "Deseja deletar esse produto?", [
+      {
+        text: "Cancelar",
+      },
+      {
+        text: "Sim",
+        onPress: async () => {
+          await deletarProduto(id), setLoading(true);
           toast.show({
             title: "Produto deletado com sucesso",
             status: "success",
-          })
+          });
           setLoading(false);
           obterTodosOsProduto();
-        }
-				},
-			]
-		);
- 
-    
-  
- 
+        },
+      },
+    ]);
   };
 
   return (
@@ -94,17 +92,17 @@ export function Home() {
                 </Text>
               </TouchableOpacity>
             </View>
-           
+
+            <ScrollView>
               {produtos.map((p) => (
-               
                 <CardsProdutos
                   key={p.id}
                   produto={p}
                   obterTodosOsProduto={obterTodosOsProduto}
                   deletarProdutoPorId={deletarProdutoPorId}
                 />
-
               ))}
+            </ScrollView>
           </>
         )}
       </View>

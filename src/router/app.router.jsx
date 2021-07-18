@@ -8,8 +8,7 @@ const App = createStackNavigator();
 
 export function AppRouter() {
 	const { user } = usarProvedorDeAutentificacao();
-
-	console.log(user.funcionario)
+	// "user.funcionario"
 	return (
 		<App.Navigator
 			screenOptions={{

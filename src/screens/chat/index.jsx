@@ -6,12 +6,14 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Image
 } from "react-native";
 
 import firebase from "firebase";
 import "firebase/firestore";
 import { Ionicons } from "@expo/vector-icons";
 import { usarProvedorDeAutentificacao } from "../../context/autenticar";
+import Logo from "../../assets/chat2.png"
 
 export function Chat() {
   const [menssagem, setMensagem] = useState();
@@ -83,7 +85,11 @@ export function Chat() {
 
   return (
     <View style={style.container}>
-      <Text style={style.header}>CHAT</Text>
+      
+        <Text style={style.header}>
+          Olympus Chat
+        </Text>
+    
       <ScrollView
         ref={scrollViewRef}
         onContentSizeChange={() =>

@@ -11,7 +11,8 @@ export const style = StyleSheet.create({
     backgroundColor: '#fff',
     color: '#1d1c1c',
     textAlign: "center",
-    fontSize: 18,
+    fontSize: 20,
+    padding: 15,
   },
   menssagens: {
     margin: 5,
@@ -27,7 +28,9 @@ export const style = StyleSheet.create({
   enviarMensagemText:{
     width: '85%',
     fontSize: 16
-  }
+  },
+
+
 });
 
 export const styleUsuario = StyleSheet.create({

@@ -45,21 +45,21 @@ export const style = StyleSheet.create({
         justifyContent: 'center'
     },
     botaoTexto: {
-        fontSize: 25,
+        fontSize: 22,
         textAlign: "center",
     },
     botaoDois: {
         flexDirection: 'row',
         backgroundColor: "white",
         marginLeft: 20,
-        width: "90%",
+        width: "50%",
         borderRadius: 30,
         borderWidth: 4,
         borderColor: "#ecaba7",
         fontSize: 25,
         textAlign: "center",
-        paddingLeft: 4,
-        paddingTop: 3,
+        paddingLeft: 1,
+        
     },
 
     forget: {
@@ -77,7 +77,7 @@ export const style = StyleSheet.create({
         flex:1,
     },
     logo: {
-        marginTop: 85,
+        marginTop: 88,
         width: 153, 
         height: 153, 
         borderRadius: 400 / 2, 
