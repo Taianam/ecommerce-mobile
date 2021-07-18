@@ -15,14 +15,10 @@ export const style = StyleSheet.create({
 		padding: 3,
 	},
 
-	conteinerUm: {
-		justifyContent: "center",
-	},
-
 	conteinerDois: {
 		width: "60%",
-		flexDirection: "row",
-		justifyContent: "space-between",
+		justifyContent: 'space-around',
+		paddingLeft: 5
 	},
 
 	cont: {
@@ -31,7 +27,6 @@ export const style = StyleSheet.create({
 		flexDirection: "row",
 		backgroundColor: "#fff",
 		borderRadius: 6,
-		justifyContent: "space-around",
 		marginHorizontal: 10,
 		marginVertical: 5,
 	},
@@ -48,16 +43,21 @@ export const style = StyleSheet.create({
 	},
 
 	conteinerTextos: {
-		paddingVertical: 7,
-		height: "100%",
-		maxWidth: "60%",
+		paddingTop: 2,
+		width: "100%",
+		flexDirection: 'row',
+		justifyContent: 'space-between'
 	},
 
 	conteinerDireita: {
+		flexDirection: 'row',
 		justifyContent: "space-between",
 	},
 
 	image: {
 		flex: 1,
 	},
+	acao:{
+		flexDirection: 'row'
+	}
 });

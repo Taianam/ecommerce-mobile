@@ -3,29 +3,34 @@ import api from "../../service/api";
 import Interface from "../../assets/Interface.png";
 import { Cards } from "../../components/cards/cardsHome";
 import { styleLight, styleDark } from "./style";
-import { View, Text, Image, ScrollView, TextInput } from "react-native";
 import { NotFound } from "../../components/notfound";
 import { usarDarkModeContexto } from "../../context/darkMode";
+import { Spinner } from "native-base";
+import { View, Text, Image, ScrollView, TextInput } from "react-native";
 
 export function Home() {
     const [produtos, setProdutos] = useState([]);
     const [produtosFiltrados, setProdutosFiltrados] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const { dark } = usarDarkModeContexto();
-    const style = dark ? styleDark : styleLight
+    const style = dark ? styleDark : styleLight;
 
     useEffect(() => {
         obterProduto();
     }, []);
-      
+
     //Função para chamar os produtos na api
     const obterProduto = async () => {
         try {
+            setLoading(true);
             const { data } = await api.get("produtos");
             setProdutos(data);
             setProdutosFiltrados(data);
         } catch (error) {
             console.log(error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -44,25 +49,31 @@ export function Home() {
     };
 
     return (
-        <View style={style.fundo}>
-            <Image source={Interface} style={style.img} />
-            <ScrollView>
-                <Text style={style.titulo}>BEM VINDO!</Text>
-                <TextInput
-                    style={style.input}
-                    placeholder="Pesquise aqui"
-                    onChangeText={filtrarProdutos}
-                />
-                {produtosFiltrados.length > 0 ? (
-                    produtosFiltrados.map((p) => (
-                        <View key={p.id}>
-                            <Cards produto={p} />
-                        </View>
-                    ))
+        <ScrollView style={style.fundo} >
+            <View style={{paddingBottom: 10, flex: 1}}>
+                {loading ? (
+                    <Spinner size="lg" />
                 ) : (
-                    <NotFound />
+                    <View>
+                        <Image source={Interface} style={style.img} resizeMode="stretch" />
+                        <Text style={style.titulo}>BEM VINDO!</Text>
+                        <TextInput
+                            style={style.input}
+                            placeholder="Pesquise aqui"
+                            onChangeText={filtrarProdutos}
+                        />
+                        {produtosFiltrados.length > 0 ? (
+                            produtosFiltrados.map((p) => (
+                                <View key={p.id}>
+                                    <Cards produto={p} />
+                                </View>
+                            ))
+                        ) : (
+                            <NotFound />
+                        )}
+                    </View>
                 )}
-            </ScrollView>
-        </View>
+            </View>
+        </ScrollView>
     );
 }
